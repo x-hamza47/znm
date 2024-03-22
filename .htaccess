@@ -1,0 +1,12 @@
+RewriteEngine On
+RewriteBase /znm/
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+SetEnv DB_HOST localhost
+SetEnv DB_USER root
+SetEnv DB_PASS 
+SetEnv DB_NAME znm
+

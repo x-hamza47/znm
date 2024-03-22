@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+    --primary-color : #f07b26;
+    --secondary-color : #535a60;
+    --accent-color : #fff;
+}
+/* Author Section */
+body{
+    background-color: #212121;
+}
+.author{
+    margin-top: 10vw;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .container{
+        width: 100%;
+    }
+}
+  
+  .auth-heading{
+    font-size: clamp(20px,4.5vw,205px);
+    color: var(--secondary-color); 
+  
+    span{
+      color: var(--primary-color);
+      position: relative;
+  
+      &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -8px;
+        width: 3px;
+        height: 100%;
+        background-color: var(--primary-color);
+        animation: blink .7s infinite 3.8s ;
+      }
+    }
+  }
+  @keyframes blink {
+    50%{
+      opacity: 0;
+    }
+  }
+  
+  
+  .author .container .card .image{
+    width: clamp(140px,16vw,750px);
+    height: clamp(140px,16vw,750px);
+    /* background-color: rgba(239, 120, 60, 0.3); */
+    background-color: rgb(184, 106, 51);
+    border-radius: 50%;
+    padding: 5px;
+  }
+  .author .container .card .image img{
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+  }
+  
+  .author .card{
+    position: relative;
+    /* background: var(--seconda-color); */
+    background: rgba(255, 255, 255, 0.1);
+    /* border-radius: 8px; */
+    margin: 20px 0;
+    width: 100%;
+    user-select: none;
+    /* border-top: 1px solid rgb(255, 191, 95); */
+    /* border-left: 1px solid rgb(255, 191, 95); */
+  }
+  
+  .author .card::before{
+    content: "";
+    position: absolute;
+    height: 40%;
+    width: 100%;
+    background: rgb(184, 106, 51);
+    /* background: var(--secondary-color); */
+    /* border-radius: 8px 8px 0px 0px; */
+  }
+  .author .card .card-content{
+    padding-block: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+  
+  .author .card .media-icons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.2%;
+  
+    .bxl-whatsapp:active{
+      color: #25d366;
+    }
+    .bxl-facebook-circle:active{
+      color:  #0165E1;
+    }
+    .bxl-instagram:active{
+      color: #ee2a7b;
+    }
+  }
+  
+  .author .card .media-icons i{
+    color: var(--accent-color);
+    opacity: 0.6;
+    margin: clamp(8px,.5vw,400px);
+    font-size: clamp(22px,2vw,150px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .author .card .media-icons i:hover{
+    opacity: 1;
+    scale: 1.1;
+  }
+  .author .card .name-profession{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 10px;
+    color: var(--accent-color);
+  }
+  .name-profession .name{
+    font-size: clamp(14px,2vw,95px);
+    font-weight: 600;
+  
+  }
+  .name-profession .profession{
+    font-size: clamp(10px,1.4vw,66px);
+    font-weight: 500;
+  }
+  
+  
+  .author .card .buttons{
+    display: flex;
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .author .card .buttons button{
+    background-color: rgba(239, 120, 60);
+    text-align: center;
+    color: #FFFF;
+    outline: none;
+    border: none;
+    padding: max(5px,.7vw) max(19px,1.6vw);
+    border-radius: 60px;
+    cursor: pointer;
+    margin-inline: 1.7vw;
+    font-size: clamp(14px,1.3vw,60px);
+    transition: all 0.2s ease;
+  
+    i{
+      margin-right: 6px;
+    }
+  }
+  .author .card .buttons button:hover{
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 4px #212121;
+  }
+  .author .card .buttons button:active{
+    box-shadow: inset 0 2px 4px #212121;
+  }

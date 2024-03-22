@@ -1,0 +1,137 @@
+.w-4 {
+  width: 1.2rem;
+}
+
+.h-4 {
+  height: 1.2rem;
+}
+
+.w-6 {
+  width: 1.7rem;
+}
+
+.h-6 {
+  height: 1.7rem;
+}
+
+/* .dropzone {
+  background: white;
+  border-radius: 5px;
+  border: 2px dashed rgb(0, 135, 247);
+  border-image: none;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+} */
+
+.card-body  td:has(ul) li{
+  list-style-type: square;
+  list-style-position: inside;
+}
+.card-body td{
+  vertical-align: middle;
+}
+.card-body  td:has(img) {
+  width: 200px;
+
+  img{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+}
+.card-body.p-0 .table tbody>tr>td:last-of-type{
+  padding-right: 0.75rem;
+}
+/* toast */
+.toast-1{
+  position: fixed;
+  background: #ffff;
+  padding: 20px 35px 20px 25px;
+  border-radius: 12px;
+  top:65px;
+  right: 30px;
+  box-shadow: 0px 5px 10px rgba(0,0, 0, 0.1);
+  border-left: 6px solid #006400;
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  z-index: 9999999;
+}
+.toast-1.active{
+transform: translateX(0%);
+}
+.toast-1 .content{
+  align-items: center;
+  display: flex;
+}
+.toast-1 .message{
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.content .check{
+  height: 35px;
+  width: 35px;
+  background: #006400;
+  color: #ffff;
+  border-radius: 50%;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.toast-1 .message .text{
+  font-size: 20px;
+  font-weight: 400;
+  color: #666666;
+}
+.toast-1 .message .text.text-1{
+  font-weight: 600;
+  color: #333;
+}
+.toast-1 .close{
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding:5px ;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.toast-1 .close:hover{
+  opacity: 1;
+}
+.toast-1 .progress{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: #ddd;
+}
+.toast-1 .progress:before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #006400;
+}
+.progress.active:before{
+  animation: progress 5s linear forwards;
+}
+
+.error.progress::before{
+  background-color: #B00020;
+}
+
+.error.toast-1{
+  border-left-color: #B00020;
+}
+@keyframes progress {
+  100%{
+      right: 100%;
+  }
+}
+
