@@ -163,39 +163,6 @@ nextSlide.addEventListener("click", () => {
   });
   
 }
-
-// Typer
-
-// const textElement = document.querySelector('.auth-heading span');
-
-// const word = 'Founder and CEO.'; 
-// let currentLetterIndex = 0;
-
-// function typeText() {
-//     if (currentLetterIndex <= word.length) {
-//         textElement.textContent = word.slice(0, currentLetterIndex);
-//         currentLetterIndex++;
-//         setTimeout(typeText, 200); 
-//     }
-// }
-
-// typeText(); 
-
-// typer End
-
-// Whatsapp 
-
-// const whtsapp = document.querySelector('.media-icons .fa-whatsapp');
-
-// let phoneNumber = "+923458424484";
-
-// whtsapp.addEventListener('click', () => {
-  //   let txt_msg = encodeURIComponent("Assalam-u-alaikum");
-  //   let url = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${txt_msg}`;
-  
-  //     window.open(url,'_blank');
-  // });
-  
   
   const name_restriction = document.querySelector(".inp_grp #name");
   
@@ -297,10 +264,10 @@ effect: "coverflow",
 grabCursor: true,
 centeredSlides: true,
 slidesPerView: slides_per_view,
-autoplay: {
-  delay: 2500,
-  disableOnInteraction: false,
-},
+// autoplay: {
+//   delay: 2500,
+//   disableOnInteraction: false,
+// },
 slidesPerGroup: 1,
 speed: 800,
 coverflowEffect: {

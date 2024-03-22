@@ -75,6 +75,4 @@ $(document).ready(function () {
     }
     loadCards();
 
-
-
 });

@@ -1,6 +1,6 @@
 <?php
 
-require_once "../admin/php/crud.php";
+require_once "../admin/php/crud.php"; 
 
 $db =  new Database();
 $output = "";

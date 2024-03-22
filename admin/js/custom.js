@@ -4,7 +4,7 @@ $(document).ready(function() {
    $("#proceed").click(function() {
     window.location.href = "./php/logout.php";
    });
-   // var originalDate,formattedDate;
+
  
    closeIcon.on("click",clears);
 

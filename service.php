@@ -29,8 +29,8 @@
             <nav class="nav">
     
                 <a href="index.php" id="logo">
-                    <img src="images/logo.jpg" alt="logo">
-                    <span> <h3 id="logo-head">ZNM Enterprises</h3></span>
+                    <img src="images/logo-2.png" alt="logo">
+                    <!-- <span> <h3 id="logo-head">ZNM Enterprises</h3></span> -->
                 </a>
                 
            
@@ -171,7 +171,7 @@
         <h2 class="fw-normal border-bottom pb-4">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
       </div>
     <!-- section 1 -->
-      <section class="container-fluid d-flex justify-content-center" id="desc-section">
+      <section class="container d-flex justify-content-center" id="desc-section">
         <!-- image -->
         <div  class="flex-fill mt-5 p-2 img-acc">
           <img src="./images/2d-plan.jpg"  class="a-img">
@@ -299,7 +299,7 @@
       <section class="container-xl container-fluid d-flex justify-content-center flex-row-reverse" id="desc-section2">
         <!-- image -->
         <div class="flex-fill mt-5 p-2 img-acc">
-          <img src="./images/cartoon-house-2-edit.jpg" class="a-img">
+          <img src="./images/construction-2.jpg" class="a-img">
         </div>
         <!-- image end -->
         <!-- accordion -->
@@ -372,7 +372,7 @@
          <section class="container-xl container-fluid d-flex justify-content-center" id="desc-section3">
           <!-- image -->
           <div class="flex-fill mt-5 p-2 img-acc">
-            <img src="./images/web.jpg" class="a-img">
+            <img src="./images/web-background.jpg" class="a-img">
           </div>
           <!-- image end -->
           <!-- accordion -->
@@ -423,6 +423,37 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+          <!-- accordion end -->
+        </section>
+         <!-- section 4 -->
+         <section class="container-xl container-fluid d-flex flex-row-reverse justify-content-center" id="desc-section3">
+          <!-- image -->
+          <div class="flex-fill mt-5 p-2 img-acc">
+            <img src="./images/event-1.jpg" class="a-img">
+          </div>
+          <!-- image end -->
+          <!-- accordion -->
+          <div id="accordion-section3" class="flex-fill w-50 mt-3 p-4">
+            <div class="container-xl container-fluid mb-4">
+              <h2 class="fw-normal " style="font-size: 28px;">Expert Services for Event Management.</h2>
+            </div>
+  
+            <div class="accordion accordion-flush" id="accordionFlushExample4">
+              <div class="accordion-item" id="web-dev">
+                <h2 class="accordion-header">
+                  <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Event Management
+                  </div>
+                </h2>
+                <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample4">
+                  <div class="accordion-body">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus at architecto quaerat, perferendis repudiandae distinctio iusto a. Perferendis soluta labore maiores porro optio nihil quidem rem. Nemo laudantium accusantium modi!</p>
+                  </div>
+                </div>
+              </div>
+ 
             </div>
           </div>
           <!-- accordion end -->
