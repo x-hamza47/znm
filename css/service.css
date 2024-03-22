@@ -42,7 +42,7 @@ html{
     }
 }
 section{
-    scroll-snap-align: top;
+    scroll-snap-align: bottom;
 }
 #desc-section .img-acc,
 #desc-section2 .img-acc,

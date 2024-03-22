@@ -184,7 +184,7 @@ body{
   padding-inline: 6.9vw;
 
   a{
-    font-size: clamp(16px,1.3vw,80px);
+    font-size: clamp(16px,1vw,80px);
     font-weight: 500;
     color: var(--accent-color);
     display: flex;
@@ -368,15 +368,17 @@ body{
   .about-us .abt-head{
     color: var(--primary-color);
     font-weight: 700;
-    max-width: 60%;
+    /* max-width: 60%; */
     width: auto;
   }
 
   /* Change images here */
 .slider .img:nth-of-type(1) { background: url("../images/interior3.jpg"); }
-.slider .img:nth-of-type(2) { background: url("../images/exterior.jpg"); }
+.slider .img:nth-of-type(2) { background: url("../images/petroleum-2.jpg"); }
 .slider .img:nth-of-type(3) { background: url("../images/unicol3.jpg"); }
 .slider .img:nth-of-type(4) { background: url("../images/interior2.jpg"); }
+.slider .img:nth-of-type(5) { background: url("../images/web-background-d.jpg"); }
+.slider .img:nth-of-type(6) { background: url("../images/event-1.jpg"); }
 
 /* Next & previous buttons */
 .home .slider :is(.prev, .next){
@@ -758,8 +760,9 @@ background-position: right center;
   text-align: center;
   backdrop-filter: blur(10px);
   border-top: 1px solid var(--secondary-color);
-  width: 320px;
-  height: 250px;
+  /* width: 320px; */
+  width: clamp(320px,22.2vw,760px);
+  height: clamp(250px,17.4vw,760px);
   border: .2rem solid #212121;
   transition: .5s ease;
   overflow: hidden;
@@ -771,8 +774,8 @@ background-position: right center;
 }
 
 .service-bx .serv-ico{
-  width: 3rem;
-  height: 3rem;
+  width: clamp(48px,3.34vw,160px);
+  height:clamp(48px,3.34vw,160px);
 
   path{
     fill: var(--primary-color);
@@ -780,14 +783,14 @@ background-position: right center;
 }
 
 .service-bx h3{
-  font-size: 1.3rem;
+  font-size: clamp(20px,1.5vw,120px);
   color: var(--accent-color);
 }
 .service-bx .serv-detail{
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  font-size:clamp(14px,1vw,80px);
+  font-size:clamp(14px,1.1vw,40px);
   /* margin: 5px 0 5px; */
   color: var(--accent-color);
   position: relative;
@@ -801,8 +804,6 @@ background-position: right center;
     text-align: justify;
 
    li{
-      /* list-style: ; */
-
       &::marker{
         color: var(--primary-color);
       }
@@ -820,7 +821,8 @@ background-position: right center;
   cursor: pointer;
   position: absolute;
   left: 50%;
-  bottom: 15px;
+  /* bottom: 15px; */
+  bottom: clamp(15px,1vw,100px);
   transform: translateX(-50%);
   
   a{
@@ -1429,3 +1431,16 @@ transform: translateX(0%);
     gap: 3rem;
   }
   }
+
+@media only screen and (min-width: 1600px)  {
+  /* Service */
+  #service .service-bx{
+    border-radius:35px;
+  }
+  .service-container{
+    gap: 30px;
+  }
+  .serv-btn{
+    padding: 10px 20px;
+  }
+}

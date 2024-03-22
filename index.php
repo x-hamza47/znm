@@ -19,8 +19,6 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/style.css">
-      
-
 </head>
 <body>
     <header class="header">
@@ -28,8 +26,8 @@
         <nav class="nav">
 
             <a href="" id="logo">
-                <img src="images/logo.jpg" alt="logo">
-                <span> <h3>ZNM Enterprises</h3></span>
+                <img src="images/logo-2.png" alt="logo">
+                <!-- <span> <h3>ZNM Enterprises</h3></span> -->
             </a>
             
            
@@ -150,28 +148,41 @@
               <div class="img" style="left: 0;"> 
                 <div class="content">
                     <h2>Design Consultant</h2>
-                    <button>Read more!</button>
+                    <a href=""><button>Read more!</button></a>
                 </div>
               </div>
 
               <div class="img">
                 <div class="content">
-                    <h2>Always Innovate for A Better Tomorrow!</h2>
-                    <button>Read more!</button>
+                    <h2>Construction</h2>
+                  <a href=""><button>Read more!</button></a>
                 </div>
               </div>
 
               <div class="img">
                 <div class="content">
-                    <h2>The Intelligent Way to Plan</h2>
-                    <button>Read more!</button>
+                    <h2>License Service</h2>
+                  <a href="#service"><button>Read more!</button></a>
                 </div>
               </div>
 
               <div class="img">
                 <div class="content">
-                    <h2>INTERIOR DESIGNING</h2>
-                    <button>Read more!</button>
+                    <h2>Interior Designing</h2>
+                  <a href=""><button>Read more!</button></a>
+                </div>
+              </div>
+
+              <div class="img">
+                <div class="content">
+                    <h2>Web Development</h2>
+                  <a href=""><button>Read more!</button></a>
+                </div>
+              </div>
+              <div class="img">
+                <div class="content">
+                    <h2>Event Managment</h2>
+                  <a href=""><button>Read more!</button></a>
                 </div>
               </div>
 
@@ -630,7 +641,7 @@
               <a href="#about-us">About Us</a>
             </li>
             <li>
-              <a href="#">Services</a>
+              <a href="#service">Services</a>
             </li>
             <li>
               <a href="#projects">Project</a>
@@ -661,7 +672,7 @@
         <!-- search bar -->
 
         <div class="footer-logo-bx">
-          <img src="./images/logo.jpg" alt="znm logo">
+          <img src="./images/logo-2.png" alt="znm logo">
           <!-- <div class="search-bx">
             <i class='bx bx-search'></i>
             <input type="search" placeholder="Search...">

@@ -70,7 +70,6 @@ $(document).ready(function () {
             url: "./php/fetch-projects.php",
             success: function (response) {
                 $("#pro-container").html(response);
-                console.log(response);
             }
         });
     }

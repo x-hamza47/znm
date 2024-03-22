@@ -23,6 +23,7 @@
       <link rel="stylesheet" href="css/service.css">
 </head>
 <body>
+
       <header class="header">
             <!--  NAVBAR  -->
             <nav class="nav">
@@ -140,12 +141,13 @@
         </section>
     
         </header>
-      <div class="container-fluid bg-black" style="background: url('./images/interior3.jpg') no-repeat;height: 70vh; background-position: center;"></div>
+      <div class="container-fluid bg-black" style="background: url('./images/interior3.jpg') no-repeat;height: 70vh; background-position: center;background-size:cover;"></div>
     <main class="container-fluid main-ser-sec">
-      <section id="srv-head" class="container-xl container-fluid  d-flex justify-content-evenly  pt-3 pb-3">
+      <section id="srv-head" class="container-fluid  d-flex justify-content-around pt-3 pb-3">
         <div id="srv-heading" class="pt-3 pb-3 w-50 border-bottom ">
           <h1 class="fw-bold ">Our Services</h1>
         </div>
+        <div class=" d-flex">
         <div id="srv-link-1" class="p-3">
           <ul class="srv-links pt-4">
             <li><a href="#topography">Topgography</a></li>
@@ -157,18 +159,19 @@
         <div id="srv-link-2" class="p-3">
           <ul class="srv-links pt-4">
             <li><a href="#construction">Construction</a></li>
-            <li><a href="#drawings">Drawings</a></li>
             <li><a href="#web-dev">Web Development</a></li>
             <li><a href="#graphic-design">Graphic Designing</a></li>
+            <li><a href="#event-man">Event Management</a></li>
           </ul>
+        </div>
         </div>
       </section>
 
-      <div class="container-xl container-fluid p-5 pt-4 pb-4  mt-4 ">
+      <div class="container-fluid p-5 pt-4 pb-4 mt-4">
         <h2 class="fw-normal border-bottom pb-4">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
       </div>
     <!-- section 1 -->
-      <section class="container-xl container-fluid d-flex justify-content-center" id="desc-section">
+      <section class="container-fluid d-flex justify-content-center" id="desc-section">
         <!-- image -->
         <div  class="flex-fill mt-5 p-2 img-acc">
           <img src="./images/2d-plan.jpg"  class="a-img">
@@ -210,24 +213,9 @@
               </h2>
               <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
                 <div class="accordion-body" style="height: 400px;overflow-y: auto;">
-                  <details>
-                    <summary class="  p-1 ">Pre-Design</summary>
-                    <p class="mt-2">Tasks in the pre-design phase include:
-                      <ul class="list-group list-group-flush list-group-numbered sum-list">
-                        <li class="list-group-item">Assisting with the formulation of a brief.</li>
-                        <li class="list-group-item">Conducting bulk and location studies.</li>
-                        <li class="list-group-item">Evaluating properties.</li>
-                        <li class="list-group-item">Performing feasibility studies.</li>
-                        <li class="list-group-item">Handling resource consent applications.</li>
-                        <li class="list-group-item">Managing encroachment license applications.</li>
-                        <li class="list-group-item">Arranging land surveys.</li>
-                        <li class="list-group-item">Obtaining geotechnical reports.</li>
-                      </ul>
-                    </p>
-                  </details>
 
                   <details>
-                    <summary class="p-1">Sketch Design</summary>
+                    <summary class="p-1">Sketch And Developed Design</summary>
                     <p class="mt-2">Tasks involved in the sketch design phase include:
                       <ul class="list-group list-group-flush list-group-numbered sum-list">
                         <li class="list-group-item">Space planning.</li>
@@ -236,10 +224,6 @@
                         <li class="list-group-item">Preliminary estimates of cost.</li>
                       </ul>
                     </p>
-                  </details>
-
-                  <details>
-                    <summary class="p-1">Developed Design</summary>
                     <p class="mt-2">Tasks involved in the developed design phase include:
                       <ul class="list-group list-group-flush list-group-numbered sum-list">
                         <li class="list-group-item">Detailed planning.</li>
@@ -251,33 +235,6 @@
                     </p>
                   </details>
 
-                  <details>
-                    <summary class="p-1">Documentation</summary>
-                    <p class="mt-2">Tasks involved in the documentation phase include:
-                      <ul class="list-group list-group-flush list-group-numbered sum-list">
-                        <li class="list-group-item">Coordination of consultants.</li>
-                        <li class="list-group-item">Detailed construction documentation.</li>
-                        <li class="list-group-item">Comprehensive specifications.</li>
-                        <li class="list-group-item">Color schemes.</li>
-                        <li class="list-group-item">Building consent applications.</li>
-                      </ul>
-                    </p>
-                  </details>
-
-                  <details>
-                    <summary class="p-1">Contract Administration</summary>
-                    <p class="mt-2">Tasks involved in contract administration include:
-                      <ul class="list-group list-group-flush list-group-numbered sum-list">
-                        <li class="list-group-item">Tendering.</li>
-                        <li class="list-group-item">Assessment of tenders.</li>
-                        <li class="list-group-item">Tender negotiation & awarding contracts.</li>
-                        <li class="list-group-item">Processing progress claims.</li>
-                        <li class="list-group-item">Processing variations.</li>
-                        <li class="list-group-item">Monitoring defects liability period.</li>
-                        <li class="list-group-item">Final account assessment.</li>
-                      </ul>
-                    </p>
-                  </details>
 
                   <details>
                     <summary class="p-1">Contract Observation</summary>
@@ -289,10 +246,50 @@
                       </ul>
                     </p>
                   </details>
-           
+                  <div class="accordion-item" id="drawings">
+              <h2 class="accordion-header">
+                <div class="accordion-button  collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                  Drawings
+                </div>
+              </h2>
+              <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
+                <div class="accordion-body" style="height: 400px;overflow-y: auto;">
+                  <details>
+                    <summary class="p-1 ">Floor Plan</summary>
+                    <p class="mt-2">
+                      A floor plan is a type of drawing that depicts the layout of a home or property from an overhead perspective. Typically, floor plans illustrate the positioning of walls, windows, doors, and stairs, along with fixed installations such as bathroom fixtures, kitchen cabinetry, and appliances. These drawings are usually done to scale and indicate room types, sizes, and wall lengths. Additionally, they may show furniture arrangements and outdoor areas.
+                    </p>
+                  </details>
+
+                  <details>
+                    <summary class="p-1">3D Floor Plan</summary>
+                    <p class="mt-2">
+                      A <strong>3D floor plan</strong>  is a type of diagram that shows the layout of a home or property in 3D. 3D means that the floor plan shows both perspective and height. Unlike a 2D Floor Plan, a <strong>3D Floor Plan</strong>  has more  details  and define  material  and  makes  it  easier  to understand the space.
+                    </p>
+                  </details>
+
                 </div>
               </div>
             </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item " id="interior-design">
+              <h2 class="accordion-header">
+                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                  Interior Designing
+                </div>
+              </h2>
+              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p>At <strong>ZNM</strong>, each project, with its diversity, challenges, and opportunities, guides us along a new path that stimulates our curiosity and creative thinking. Therefore, each project is approached as a new and original territory without preconceived notions or ideas. The <strong>ZNM</strong> team brings together a special blend of talent and discipline through technical expertise and instinct, resulting in successful project outcomes.</p>
+
+                <p>We at <strong>ZNM</strong> adhere to a user-centric philosophy, centered on listening to our clients and providing innovative solutions, all while staying on schedule and within budget. We encourage continuous client participation throughout the project lifecycle, fostering productive interactions and building strong relationships.</p>
+                <p>Our approach to design is tailored to fit the owner's program, scope, timeline, and budget. Good design is truly innovative, eminently sensible, and a source of inspiration for all involved.</p>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
         <!-- accordion end -->
@@ -312,7 +309,7 @@
           </div>
 
           <div class="accordion accordion-flush" id="accordionFlushExample2">
-            <div class="accordion-item " id="interior-design">
+            <!-- <div class="accordion-item " id="interior-design">
               <h2 class="accordion-header">
                 <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
                   Interior Designing
@@ -326,7 +323,7 @@
                 <p>Our approach to design is tailored to fit the owner's program, scope, timeline, and budget. Good design is truly innovative, eminently sensible, and a source of inspiration for all involved.</p>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="accordion-item" id="construction">
               <h2 class="accordion-header" >
                 <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
@@ -341,7 +338,7 @@
                 </div>
               </div>
             </div>
-            <div class="accordion-item" id="drawings">
+            <!-- <div class="accordion-item" id="drawings">
               <h2 class="accordion-header">
                 <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
                   Drawings
@@ -357,31 +354,15 @@
                   </details>
 
                   <details>
-                    <summary class="p-1">2D Floor Plan</summary>
-                    <p class="mt-2">
-                      A <strong> 2D floor plan </strong>is a type of diagram that shows the layout of a space from above including the walls and rooms. 2D means that the floor plan is a “flat” drawing, without perspective or depth. A <strong>2D floor plan</strong>  can be a sketch, a blueprint, or a computer drawing.
-                    </p>
-                  </details>
-
-                  <details>
                     <summary class="p-1">3D Floor Plan</summary>
                     <p class="mt-2">
                       A <strong>3D floor plan</strong>  is a type of diagram that shows the layout of a home or property in 3D. 3D means that the floor plan shows both perspective and height. Unlike a 2D Floor Plan, a <strong>3D Floor Plan</strong>  has more  details  and define  material  and  makes  it  easier  to understand the space.
                     </p>
                   </details>
 
-                  <details>
-                    <summary class="p-1">Why are Floor Plans important?</summary>
-                    <p class="mt-2">
-                      According to research by Zillow, 81% of home buyers say they are more likely to view a home if the listing includes a floor plan they like.
-                      Floor plans are an essential part of real estate marketing, as well as home building, interior design, and architecture projects.
-                    Floor plans show the relationship between rooms and spaces, furniture layout, and communicate how one can move through a property.
-                    </p>
-                  </details>
-
                 </div>
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
         <!-- accordion end -->
@@ -471,7 +452,7 @@
     <div class="contact_nav">
       <a href="tel:+923353439611" class="footer-links">      
         <i class='bx bxs-phone' ></i>
-        <span> +92 335 3439611 </span>
+        <span> +92 345 8424484 </span>
       </a>
 
       <a href="mailto:znm.enterprises3@outlook.com" class="footer-links">
