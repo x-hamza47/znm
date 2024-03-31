@@ -9,8 +9,12 @@ navbar = document.querySelector('.nav');
 services.style.display = "none";
 services_container.style.opacity = '0';
 services_container.style.transition = 'opacity .4s ease';
+let isAnimating = false;
 
  scroll_arrow.addEventListener('click',function(){
+  if (isAnimating) return;
+
+  isAnimating = true;
     h.classList.toggle('active');
 
     if ( h.classList.contains('active') ) {
@@ -26,6 +30,7 @@ services_container.style.transition = 'opacity .4s ease';
 
         setTimeout(() => {
             services_container.style.opacity = '1';
+            isAnimating = false;
         }, 900);
 
     } else {
@@ -38,6 +43,7 @@ services_container.style.transition = 'opacity .4s ease';
         h.style.top = '0';
         services.style.display = "none";
         h.style.height = '';
+        isAnimating = false;
     }
 
 });
@@ -56,7 +62,10 @@ window.onscroll = () =>  {
         if(top >= offset && top < offset + height){
             navBar.forEach(links => {
                 links.classList.remove('active');
-                document.querySelector('header nav a[href*= '  + id + ' ]').classList.add('active');
+                let targetLink = document.querySelector('header nav a[href*= '  + id + ' ]');
+                if(targetLink){
+                  targetLink.classList.add("active");
+                }
             });
         };
       
@@ -113,6 +122,17 @@ for (let i = 0; i < sliders.length; ++i) {
       sliderImgs[nextImg].style.animationName = "rightNext";
       sliderImgs[currImg].style.animationName = "rightCurr";
     }
+    // Removing animation from previous content elements
+    const prevContentElements = sliderImgs[currImg].querySelectorAll(".content h2, .content a");
+    prevContentElements.forEach(element => {
+        element.classList.remove("current-img");
+    });
+
+    // Adding class to content elements of current slider
+    const currContentElements = sliderImgs[nextImg].querySelectorAll(".content h2, .content a");
+    currContentElements.forEach(element => {
+        element.classList.add("current-img");
+    });
 
     prevImg = currImg;
     currImg = nextImg;
@@ -122,6 +142,7 @@ for (let i = 0; i < sliders.length; ++i) {
     prevDot = allDots[prevImg];
     prevDot.classList.remove("active-dot");
   }
+
 
   function dotClick(num) {
     if (num == currImg)
@@ -308,3 +329,52 @@ const toggler = () => {
 }
 
 nav_toggle_btn.addEventListener("click",toggler);
+
+// Carousel
+const next_btn = document.getElementById("next"),
+prev_btn = document.getElementById("prev"),
+carousel = document.querySelector(".carousel"),
+list = document.querySelector(".carousel .list"),
+thumbnail = document.querySelector(".carousel .thumbnail");
+
+
+next_btn.onclick = () => {
+    showSlider('next');
+}
+prev_btn.onclick = () => {
+    showSlider('prev');
+}
+let timer = 3000;
+let time_out;
+let autoplay = 7000;
+let autoRun = setTimeout(() => {
+    next_btn.click();
+}, autoplay);
+
+function showSlider(type) {  
+    let item_slider = document.querySelectorAll(".carousel .list .item");
+    let item_thumb = document.querySelectorAll(".carousel .thumbnail .item");
+
+    if (type === 'next') {
+        list.appendChild(item_slider[0]);
+        thumbnail.appendChild(item_thumb[0]);
+        carousel.classList.add('next');
+    }else{
+        let pos_last_item = item_slider.length - 1;
+        list.prepend(item_slider[pos_last_item]);
+        thumbnail.prepend(item_thumb[pos_last_item]);
+        carousel.classList.add('prev');
+    }
+
+    clearTimeout(time_out);
+    time_out = setTimeout(() =>{
+        carousel.classList.remove('next');
+        carousel.classList.remove('prev');
+    },timer);
+
+    clearTimeout(autoRun);
+    autoRun = setTimeout(() => {
+        next_btn.click();
+    }, autoplay);
+
+}

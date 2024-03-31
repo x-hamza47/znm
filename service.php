@@ -35,12 +35,12 @@
                 
            
               <ul class="links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#service" class="active">Services</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.php#home">Home</a></li>
+                <li><a href="index.php#about-us">About Us</a></li>
+                <li><a href="index.php#service" class="active">Services</a></li>
+                <li><a href="index.php#clients">Clients</a></li>
+                <li><a href="index.php#projects">Projects</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
               </ul>
 
               <button class="nav__toggle-btn"><i class='bx bx-menu'></i></button>
@@ -173,8 +173,18 @@
     <!-- section 1 -->
       <section class="container d-flex justify-content-center" id="desc-section">
         <!-- image -->
-        <div  class="flex-fill mt-5 p-2 img-acc">
-          <img src="./images/2d-plan.jpg"  class="a-img">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+              <img src="./images/topography-3.png" class="d-block a-img ">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/background-6.png" class="d-block a-img">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/background-7.png" class="d-block a-img">
+            </div>
+          </div>
         </div>
         <!-- image end -->
         <!-- accordion -->
@@ -298,8 +308,18 @@
       <!-- section 2 -->
       <section class="container-xl container-fluid d-flex justify-content-center flex-row-reverse" id="desc-section2">
         <!-- image -->
-        <div class="flex-fill mt-5 p-2 img-acc">
-          <img src="./images/construction-2.jpg" class="a-img">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+              <img src="./images/construction-4.jpg" class="d-block a-img ">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/construction-2.jpg" class="d-block a-img">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/construction-3.jpg" class="d-block a-img">
+            </div>
+          </div>
         </div>
         <!-- image end -->
         <!-- accordion -->
@@ -371,9 +391,21 @@
          <!-- section 3 -->
          <section class="container-xl container-fluid d-flex justify-content-center" id="desc-section3">
           <!-- image -->
-          <div class="flex-fill mt-5 p-2 img-acc">
-            <img src="./images/web-background.jpg" class="a-img">
+             <!-- image -->
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+              <img src="./images/web-background-5.jpg" class="d-block a-img ">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/web-background-2.jpg" class="d-block a-img">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/web-background-3.jpg" class="d-block a-img">
+            </div>
           </div>
+        </div>
+        <!-- image end -->
           <!-- image end -->
           <!-- accordion -->
           <div id="accordion-section3" class="flex-fill w-50 mt-3 p-4">
@@ -430,10 +462,20 @@
          <!-- section 4 -->
          <section class="container-xl container-fluid d-flex flex-row-reverse justify-content-center" id="desc-section3">
           <!-- image -->
-          <div class="flex-fill mt-5 p-2 img-acc">
-            <img src="./images/event-1.jpg" class="a-img">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+              <img src="./images/event-1.jpg" class="d-block a-img ">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/event-2.jpg" class="d-block a-img">
+            </div>
+            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+              <img src="./images/event-3.jpg" class="d-block a-img">
+            </div>
           </div>
-          <!-- image end -->
+        </div>
+        <!-- image end -->
           <!-- accordion -->
           <div id="accordion-section3" class="flex-fill w-50 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">

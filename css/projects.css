@@ -1,0 +1,197 @@
+:root{
+    --primary-color : #f07b26;
+    --secondary-color : #535a60;
+    --accent-color : #fff;
+}
+.projects-head,.project-head {
+    width: 100%;
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: cover !important;
+}
+.projects-head{
+    background: url('../images/background-6.png') no-repeat;
+}
+.project-head{
+    background: url('../images/background-7.png') no-repeat;
+}
+.heading h1{
+    font-size: clamp(14px,1.8vw,145px);
+    text-align: center;
+    color: var(--accent-color);
+    font-weight: 50;
+    letter-spacing: .4em;
+}
+.heading h2{
+    font-size: clamp(20px,4vw,145px);
+    color: var(--accent-color);
+}
+:is(h1,h2){
+    transform: translateY(60px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+
+.heading h1{
+    animation-delay: .4s;
+}
+.heading h2{
+    animation-delay: .8s;
+}
+
+@keyframes showContent {
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+  }
+  
+.projects,.project{
+    height: 100%;
+    background-color: #1E1E1E;
+    padding: max(20px,4vw) 3vw;
+}
+.projects-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.projects .project-bx{
+    position: relative;
+    flex: 1 1 1;
+    width: clamp(300px,21.74vw,420px);
+    box-shadow: 0 0  10px var(--bg-color);
+    overflow: hidden;
+    display: flex;
+    cursor: pointer;
+
+    &:hover img{
+        transform: scale(1.1);
+    }
+
+    .project-layer{
+        position: absolute;
+        padding: 10px 15px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary-color);
+        width: 70%;
+        color: var(--accent-color);
+        transform: translateY(100%);
+        transition: .5s ease;
+
+        h4{
+            font-size: 20px;
+        }
+        p{ 
+           font-size: 13px;
+            margin: 3px 0 10px;}
+    }
+
+}
+.projects .project-layer h4, 
+.projects .project-layer p {
+    transform: translateY(60px);
+    filter: blur(20px);
+    opacity: 0;
+    transition: all .5s ease;
+
+}
+.projects .project-bx .project-layer h4{
+  transition-delay: .2s;
+}
+.projects .project-bx .project-layer p{
+  transition-delay: .4s;
+}
+.projects .project-bx:hover .project-layer h4, 
+.projects .project-bx:hover .project-layer p{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.project-bx:hover .project-layer { 
+    transform: translateY(0); 
+}
+.projects .project-bx img{
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio :3/2; 
+    transition: all .5s ease;
+}
+
+/* project */
+.project{
+    padding: max(20px,4vw) 5vw;
+    /* height: 100%; */
+}
+.project-container{
+    gap: 20px;
+    flex-wrap: wrap;
+    
+    .info-bx-1{
+        color: var(--accent-color);
+        flex: .8;
+        /* width: 50%; */
+        /* height: 100%; */
+        /* width: clamp(300px,21.74vw,420px); */
+        
+        .desc-container{
+            border-radius: 17px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 20px 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            margin-top: 4vw;
+
+            h3{
+                padding: 10px;
+                width:max-content;
+                color: var(--primary-color);
+            }
+            p{
+                font-size:clamp(14px,1.1vw,40px);
+                padding: 10px;
+                width: 95%;
+            }
+        }
+
+        .detail-container{
+            border-radius: 7px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 20px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            margin-top: 4vw;
+
+            h4{
+                color: var(--primary-color);
+            }
+        }
+
+    }
+}
+.img-container{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* width: 40%; */
+    img{
+        width: 100%;
+        /* width: clamp(300px,21.74vw,420px); */
+        aspect-ratio: 4/2;
+        object-fit: cover;
+        margin-top: 2vw;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .project-container{
+        flex-direction: column;
+    }
+}

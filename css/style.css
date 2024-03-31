@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
-    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+    /* font-family: 'britannic bold'; */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -13,8 +15,20 @@
     --secondary-color : #535a60;
     --accent-color : #fff;
 }
-
-
+html::-webkit-scrollbar{
+  width: 6px;
+  background-color: var(--secondary-color);
+}
+html::-webkit-scrollbar-track{
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  box-shadow: inset 0 0 5px var(--secondary-color);
+}
+html::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
 body{
   overflow-x: hidden;
  /* user-select: none; */
@@ -27,7 +41,7 @@ body{
   width: 100%;
   display: flex;
   transition: all .5s ;
-  z-index: 1000;
+  z-index: 2000;
   height:clamp(67px,4.8vw,288px) ;
 }
 
@@ -42,9 +56,12 @@ body{
         border-radius: 50%;
         background-color: rgba(239, 120, 60, 0.3);
         font-size: clamp(16px,1.4vw,80px);
+        backdrop-filter: blur(20px);
         color: #fff;
         font-weight: 300;
         cursor: pointer;
+        rotate: 0deg;
+        transition: rotate .5s ease 1s;
         animation: bounce 2s infinite;
         z-index: 1001;
     }
@@ -97,8 +114,8 @@ body{
   }
   .links li a
   {
-    background-color:  rgba(239,121,60,.3);
-    backdrop-filter: blur(100px) !important ;
+    background-color: rgba(239,121,60,.1);
+    backdrop-filter: blur(51px) !important ;
     padding: 1rem 5rem 1.1rem 2.5rem;
     margin-left: 0 !important;
     border-top: 1px solid rgb(255, 181, 144);
@@ -133,12 +150,14 @@ body{
 }
 .links li:nth-child(5){
     animation-delay: 1.2s;
-    /* transform-origin: top right; */
   }
   .links li:nth-child(6){
     animation-delay: 1.5s;
     transform: rotateZ(90deg) rotateY(90deg);
     transform-origin: top left;
+}
+  .links li:nth-child(7){
+    animation-delay: 1.8s;
 }
 @keyframes animation1 {
     to{
@@ -158,7 +177,7 @@ body{
   overflow: hidden;
 }
 
-#logo > span{
+/* #logo > span{
   color: var(--secondary-color);
   overflow: hidden;
 
@@ -169,7 +188,7 @@ body{
     transition: transform .5s;
     transform: translateX(0);
   }
-}
+} */
 
 #logo img{
   width: clamp(70px,6vw,350px);
@@ -181,7 +200,7 @@ body{
   background-color:  rgba(239,121,60,.1);
   backdrop-filter: blur(10px);
   justify-content: space-between;
-  padding-inline: 6.9vw;
+  padding-inline: 4vw;
 
   a{
     font-size: clamp(16px,1vw,80px);
@@ -205,7 +224,9 @@ body{
   backdrop-filter: blur(10px);
 
   .arr-dwn{
+      transition: rotate .5s ease 1s;
       background-color: rgba(83, 90, 96,.4) ;
+      rotate: 180deg; 
   }
 
   #logo {
@@ -340,7 +361,7 @@ body{
     animation-fill-mode: forwards;
 
     .content h2{
-        font-size: clamp(20px,3vw,145px);
+        font-size: clamp(20px,4vw,145px);
     }
     .content button {
         color: var(--accent-color);
@@ -373,12 +394,12 @@ body{
   }
 
   /* Change images here */
-.slider .img:nth-of-type(1) { background: url("../images/interior3.jpg"); }
+.slider .img:nth-of-type(1) { background: url("../images/background-6.png"); }
 .slider .img:nth-of-type(2) { background: url("../images/petroleum-2.jpg"); }
-.slider .img:nth-of-type(3) { background: url("../images/unicol3.jpg"); }
-.slider .img:nth-of-type(4) { background: url("../images/interior2.jpg"); }
-.slider .img:nth-of-type(5) { background: url("../images/web-background-d.jpg"); }
-.slider .img:nth-of-type(6) { background: url("../images/event-1.jpg"); }
+.slider .img:nth-of-type(3) { background: url("../images/construction-3-e1.jpg"); }
+/* .slider .img:nth-of-type(4) { background: url("../images/interior2.jpg"); } */
+.slider .img:nth-of-type(4) { background: url("../images/web-background-d.jpg"); }
+.slider .img:nth-of-type(5) { background: url("../images/event-1.jpg"); }
 
 /* Next & previous buttons */
 .home .slider :is(.prev, .next){
@@ -463,6 +484,29 @@ body{
   to { left: 100%; }
 }
 
+/* testing */
+.home .slider .img .content h2.current-img, 
+.home .slider .img .content a.current-img button {
+    transform: translateY(60px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s 1s linear 1 forwards;
+}
+.home .slider .img .content h2.current-img{
+  animation-delay: 1.2s;
+}
+.home .slider .img .content a.current-img button{
+  animation-delay: 1.4s;
+}
+
+@keyframes showContent {
+  to{
+      opacity: 1;
+      filter: blur(0);
+      transform: translateX(0);
+  }
+}
+
 
 /* About Us */
 
@@ -495,7 +539,8 @@ padding: max(20px,4vw) 3vw;
 }  
 
 .img1{
-background: url('../images/cartoon-house-2-edit.jpg') no-repeat;
+background: url('../images/background-7.png') no-repeat;
+background-position: -400px;
 }
 
 .img2{
@@ -533,18 +578,22 @@ background-position: right center;
       margin-bottom: 1vw;
     }
     p{
-      font-size: clamp(14px,1.2vw,57px);
+      font-size: clamp(14px,1vw,57px);
       line-height: 1.9;
       margin-top: 2%;
     }
 
   .val-desc {
-    font-size:clamp(14px,1.2vw,57px) ;
+    font-size:clamp(14px,1vw,57px);
+
     dt{
       color: var(--primary-color);
       margin-top: 7px;
       text-decoration: underline ;
       text-underline-offset: 3px;
+    }
+    dd{
+      margin-top: 7px;
     }
   }
 
@@ -559,7 +608,7 @@ background-position: right center;
     li{
       list-style-type: '✔';
       line-height: 2;
-      font-size: clamp(14px,1.2vw,57px);
+      font-size: clamp(14px,1vw,57px);
       padding-left: 1.7vw;
     }
   }
@@ -626,12 +675,19 @@ li::marker{
   }
 }
 
+.visits{
+ padding: 2vw 0;
+ background-color: #1E1E1E;
+
+ .visit-container{
+  margin-top: 5vw;
+ }
+}
 /* project */
 
-.project_section{
+/* .project_section{
   width: 100%;
   height: 100%;
-  /* background: #1E1E1E; */
   background: url('../images/building-2.jpg') no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -641,15 +697,7 @@ li::marker{
   flex-direction: column;
 }
 
-.project_section .head-container,
-.service-sec .head-container,
-.clients-container .clients-heading{
-  font-size: clamp(20px,2.5vw,145px);
-  color: var(--primary-color);
-  font-weight: 600;
-  text-align: center;
-  margin-block: 1vw;
-}
+
 
 .main-container{
   width: clamp(300px,100%,100%);
@@ -679,7 +727,6 @@ li::marker{
   z-index: 100;
 }
 .project-card{
-  /* width: 340px; */
   position: relative;
   user-select: none;
   border-top: 1px solid rgb(255, 181, 144);
@@ -737,8 +784,19 @@ li::marker{
 .swiper-button-next:hover, .swiper-button-prev:hover{
   opacity: 1;
   color: var(--primary-color);
-}
+} */
 
+.project_section .head-container,
+.visits .head-container,
+.service-sec .head-container h2,
+.clients-container .clients-heading{
+  font-size: clamp(20px,2.5vw,145px) !important;
+  color: var(--primary-color);
+  font-weight: 600;
+  text-align: center;
+  margin-block: 1vw;
+  z-index: 1000;
+}
 /* Service Section */
 
 .service-sec{
@@ -746,9 +804,91 @@ li::marker{
   width: 100%;
   background: #212121;
   padding: 5vw 2.2vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
+  flex-direction: column;
+  overflow: hidden;
 }
 
+.service-sec::before{
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  transform: translate(-350px,-170px);
+  filter: blur(30px);
+  background: linear-gradient(90deg,#f07a26b2,#fc944ab6,#f3f5f5);
+  animation: floating1 40s linear infinite;
+}
+.service-sec::after{
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  filter: blur(30px);
+  transform: translate(250px, 170px);
+  background: linear-gradient(90deg,#f07a26b2,#fc944ab6,#f3f5f5);
+  z-index: 1;
+  animation: floating2 40s linear infinite;
+}
+@keyframes floating1 {
+  10% {
+    transform: translate(-150px, -70px);
+  }
+  25% {
+    transform: translate(80px, 0px);
+  }
+  50% {
+    transform: translate(400px, 100px);
+  }
+  75% {
+    transform: translate(200px, -170px);
+  }
+  90% {
+    transform: translate(-170px, -30px);
+  }
+}
+
+@keyframes floating2 {
+  10% {
+    transform: translate(150px, 40px);
+  }
+  25% {
+    transform: translate(-500px, -10px);
+  }
+  50% {
+    transform: translate(0, 270px);
+  }
+  75% {
+    transform: translate(-400px, 170px);
+  }
+  90% {
+    transform: translate(500px, 70px);
+  }
+}
+
+/* @keyframes floating1 {
+    10%{
+      transform: translateX(-100px);
+    }
+    30%{ transform: translate(150px,0); }
+    60%{ transform: translate(300px,100px); }
+    75%{ transform: translate(-700px,-50px); }
+    90%{ transform: translate(400px,0); }
+}
+@keyframes floating2 {
+    10%{
+      transform: translateX(100px);
+    }
+    30%{ transform: translate(-50px,0); }
+    60%{ transform: translate(-300px,-100px); }
+    75%{ transform: translate(700px,50px); }
+    90%{ transform: translate(-400px,0);  }
+} */
 .service-container{
   display: flex;
   justify-content: center;
@@ -756,20 +896,22 @@ li::marker{
   flex-wrap: wrap;
   /* height: 100%; */
   gap: 20px;
+  z-index: 100;
 }
 
 #service .service-bx{
-  background: rgba(82, 109, 160, 0.1);
+  background: rgba(255, 255, 255, 0.1);
   flex: 1 1 1 300px;
   padding: 10px 15px 14px;
-  border-radius: 20px;
+  border-radius: 15px;
   text-align: center;
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--secondary-color);
-  /* width: 320px; */
+  backdrop-filter: blur(25px);
+  /* border-top: 1px solid var(--secondary-color); */
+  box-shadow: 0 25 45px rgba(0, 255, 0, .25);
   width: clamp(320px,22.2vw,760px);
-  height: clamp(250px,17.4vw,760px);
-  border: .2rem solid #212121;
+  height: clamp(250px,19.4vw,760px);
+  line-height: 1.5;
+  border: .2rem solid transparent;
   transition: .5s ease;
   overflow: hidden;
 
@@ -1378,9 +1520,10 @@ transform: translateX(0%);
   
     /* about us */
     .about-us .content:nth-child(1){
-      background: url('../images/construction-3-edit.jpg') no-repeat;
-      background-size: cover;
-      background-attachment: fixed;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 7px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
     }
     .about-us .content:nth-child(2){
       background: url('../images/cartoon-house-2-edit.jpg') no-repeat;

@@ -18,6 +18,7 @@
       <!-- Link Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!-- Custom CSS -->
+      <link rel="stylesheet" href="css/carousel.css">
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -32,12 +33,13 @@
             
            
               <ul class="links">
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#service">Services</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.php#home" class="active">Home</a></li>
+                <li><a href="index.php#about-us">About Us</a></li>
+                <li><a href="index.php#service">Services</a></li>
+                <li><a href="index.php#service">Design Gallery</a></li>
+                <li><a href="index.php#clients">Clients</a></li>
+                <li><a href="projects.php">Projects</a></li>
+                <li><a href="index.php#contact">Contact</a></li>
               </ul>
 
               <button class="nav__toggle-btn"><i class='bx bx-menu'></i></button> 
@@ -61,45 +63,38 @@
 
         <div class="slider">
             <div class="imgs">
- 
               <div class="img" style="left: 0;"> 
                 <div class="content">
-                    <h2>Design Consultant</h2>
-                    <a href=""><button>Read more!</button></a>
+                    <h2 class="current-img">Design Consultant</h2>
+                    <a href="service.php" class="current-img"><button>See more!</button></a>
+                </div>
+              </div>
+
+              <div class="img">
+                <div class="content">
+                    <h2>Explosive License Service</h2>
+                  <a href="service.php"><button>See more!</button></a>
                 </div>
               </div>
 
               <div class="img">
                 <div class="content">
                     <h2>Construction</h2>
-                  <a href=""><button>Read more!</button></a>
+                  <a href="service.php"><button>See more!</button></a>
                 </div>
               </div>
 
-              <div class="img">
-                <div class="content">
-                    <h2>License Service</h2>
-                  <a href="#service"><button>Read more!</button></a>
-                </div>
-              </div>
-
-              <div class="img">
-                <div class="content">
-                    <h2>Interior Designing</h2>
-                  <a href=""><button>Read more!</button></a>
-                </div>
-              </div>
 
               <div class="img">
                 <div class="content">
                     <h2>Web Development</h2>
-                  <a href=""><button>Read more!</button></a>
+                  <a href="service.php"><button>See more!</button></a>
                 </div>
               </div>
               <div class="img">
                 <div class="content">
                     <h2>Event Managment</h2>
-                  <a href=""><button>Read more!</button></a>
+                  <a href="service.php"><button>See more!</button></a>
                 </div>
               </div>
 
@@ -233,14 +228,15 @@
           </div>
     <!-- service bx-3 -->
         <div class="service-bx">
-        <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M160-120q-17 0-28.5-11.5T120-160q0-17 11.5-28.5T160-200h40v-240h-40q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h40v-240h-40q-17 0-28.5-11.5T120-800q0-17 11.5-28.5T160-840h640q17 0 28.5 11.5T840-800q0 17-11.5 28.5T800-760h-40v240h40q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440h-40v240h40q17 0 28.5 11.5T840-160q0 17-11.5 28.5T800-120H160Zm120-80h400v-240q-17 0-28.5-11.5T640-480q0-17 11.5-28.5T680-520v-240H280v240q17 0 28.5 11.5T320-480q0 17-11.5 28.5T280-440v240Zm200-120q50 0 85-34.5t35-83.5q0-39-22.5-67T480-620q-75 86-97.5 114.5T360-438q0 49 35 83.5t85 34.5ZM280-200v-560 560Z"/></svg>            <h3>License Service</h3>
+        <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M160-120q-17 0-28.5-11.5T120-160q0-17 11.5-28.5T160-200h40v-240h-40q-17 0-28.5-11.5T120-480q0-17 11.5-28.5T160-520h40v-240h-40q-17 0-28.5-11.5T120-800q0-17 11.5-28.5T160-840h640q17 0 28.5 11.5T840-800q0 17-11.5 28.5T800-760h-40v240h40q17 0 28.5 11.5T840-480q0 17-11.5 28.5T800-440h-40v240h40q17 0 28.5 11.5T840-160q0 17-11.5 28.5T800-120H160Zm120-80h400v-240q-17 0-28.5-11.5T640-480q0-17 11.5-28.5T680-520v-240H280v240q17 0 28.5 11.5T320-480q0 17-11.5 28.5T280-440v240Zm200-120q50 0 85-34.5t35-83.5q0-39-22.5-67T480-620q-75 86-97.5 114.5T360-438q0 49 35 83.5t85 34.5ZM280-200v-560 560Z"/></svg>         
+          <h3>License Service</h3>
             <div class="serv-detail">
           <p> Our team consists of skilled professionals and tradespeople. We aim to deliver top-quality...</p> 
             </div>
-          <button class="serv-btn" ><a href="service.php#construction">Read More</a></button>
+          <button class="serv-btn" ><a href="license.php">Read More</a></button>
         </div>
     <!-- service bx-4 -->
-          <div class="service-bx">
+          <!-- <div class="service-bx">
           <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-120v-375l-72 55-48-64 440-336 440 336-48 63-72-54v375H160Zm80-80h480v-356L480-739 240-556v356Zm0 0h480-480Zm80-160q-17 0-28.5-11.5T280-400q0-17 11.5-28.5T320-440q17 0 28.5 11.5T360-400q0 17-11.5 28.5T320-360Zm160 0q-17 0-28.5-11.5T440-400q0-17 11.5-28.5T480-440q17 0 28.5 11.5T520-400q0 17-11.5 28.5T480-360Zm160 0q-17 0-28.5-11.5T600-400q0-17 11.5-28.5T640-440q17 0 28.5 11.5T680-400q0 17-11.5 28.5T640-360Z"/></svg>            
           <h3>Interior Designing</h3>
             <div class="serv-detail">
@@ -249,7 +245,7 @@
               </p>
             </div>
             <button class="serv-btn" ><a href="service.php#interior-design">Read More</a></button>
-          </div>
+          </div> -->
     <!-- service bx-5 -->
           <div class="service-bx">
           <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z"/></svg>          
@@ -282,6 +278,168 @@
       <button class="serv-btn" ><a href="service.php#web-dev">Read More</a></button>
     </div>
   </main>
+  </section>
+
+  <section class="visits" id="visit">
+
+  <div class="visit-container">
+          <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <!-- item 1 -->
+            <div class="item">
+                <img src="images/petroleum-2.jpg">
+                <div class="content">
+                    <div class="author">HAMZA</div>
+                    <h2 class="title">DEVELOPER</h2>
+                    <h3 class="topic">LANDSCAPE</h3>
+                    <p class="des">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
+                    </p>
+                    <!-- <div class="btns">
+                        <button>SEE MORE</button>
+                        <button>LIKE</button>
+                    </div> -->
+                </div>
+            </div>
+            <!-- item 2 -->
+          <div class="item">
+            <img src="images/3d-e1.jpg">
+            <div class="content">
+                <div class="author">HAMZA</div>
+                <h2 class="title">DEVELOPER</h2>
+                <h3 class="topic">LANDSCAPE</h3>
+                <p class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
+                </p>
+                <!-- <div class="btns">
+                    <button>SEE MORE</button>
+                    <button>LIKE</button>
+                </div> -->
+            </div>
+          </div>
+            <!-- item 3 -->
+          <div class="item">
+            <img src="images/construction-3-e1.jpg">
+            <div class="content">
+                <div class="author">HAMZA</div>
+                <h2 class="title">DEVELOPER</h2>
+                <h3 class="topic">LANDSCAPE</h3>
+                <p class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
+                </p>
+                <!-- <div class="btns">
+                    <button>SEE MORE</button>
+                    <button>LIKE</button>
+                </div> -->
+            </div>
+            </div>
+          <!-- item 4 -->
+          <div class="item">
+            <img src="images/event-1.jpg">
+            <div class="content">
+                <div class="author">HAMZA</div>
+                <h2 class="title">DEVELOPER</h2>
+                <h3 class="topic">LANDSCAPE</h3>
+                <p class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
+                </p>
+                <!-- <div class="btns">
+                    <button>SEE MORE</button>
+                    <button>LIKE</button>
+                </div> -->
+            </div>
+          </div>
+          <!-- item 5 -->
+          <div class="item">
+            <img src="images/web-background-d.jpg">
+            <div class="content">
+                <div class="author">HAMZA</div>
+                <h2 class="title">DEVELOPER</h2>
+                <h3 class="topic">LANDSCAPE</h3>
+                <p class="des">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
+                </p>
+                <!-- <div class="btns">
+                    <button>SEE MORE</button>
+                    <button>LIKE</button>
+                </div> -->
+            </div>
+            </div>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <!-- item 2 -->
+            <div class="item">
+                <img src="images/3d-e1.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="des">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <!-- item 3 -->
+            <div class="item">
+                <img src="images/construction-3-e1.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="des">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <!-- item 4 -->
+            <div class="item">
+                <img src="images/event-1.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="des">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <!-- item 5 -->
+            <div class="item">
+                <img src="images/web-background-d.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="des">
+                        Description
+                    </div>
+                </div>
+            </div>
+            <!-- item 1 -->
+            <div class="item">
+                <img src="images/petroleum-2.jpg">
+                <div class="content">
+                    <div class="title">
+                        Name Slider
+                    </div>
+                    <div class="des">
+                        Description
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- arrows -->
+            <div class="arrows">
+                <button id="prev"><</button>
+                <button id="next">></button>
+            </div>
+            <div class="time"></div>
+    </div>
+
+  </div>
   </section>
 
   <section class="clients-container" id="clients">
@@ -442,7 +600,7 @@
 
 <!-- Project Section -->
 
-<section class="project_section" id="projects">
+<!-- <section class="project_section" id="projects">
 
       <div class="head-container">
         <h2>Projects</h2>
@@ -457,7 +615,7 @@
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
  </div>
-</section>
+</section> -->
 
 
 <!-- Contact Section -->
@@ -539,7 +697,7 @@
     <div class="contact_nav">
       <a href="tel:+923353439611" class="footer-links">      
         <i class='bx bxs-phone' ></i>
-        <span> +92 335 3439611 </span>
+        <span> +92 345 8424484 </span>
       </a>
 
       <a href="mailto:znm.enterprises3@outlook.com" class="footer-links">

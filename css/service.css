@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap'); */
 
-*{
+/* *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-}
+} */
 
 :root{
     --primary-color : #f07b26;
@@ -17,11 +17,11 @@
 html{
     scroll-snap-type: y proximity;
 }
-.header .nav a{
+/* .header .nav a{
     color: var(--primary-color);
 }
 .nav a:hover,
-.nav a.active{ color: var(--secondary-color); }
+.nav a.active{ color: var(--secondary-color); } */
 
 #srv-head #srv-heading h1{
     font-size: 116px;
@@ -44,13 +44,17 @@ html{
 section{
     scroll-snap-align: bottom;
 }
+.carousel{
+flex: 1 1 1;
+    width: 50%;
+}
 #desc-section .img-acc,
 #desc-section2 .img-acc,
 #desc-section3 .img-acc{
-    width: 50%;
+    width: 100%;
     display: flex;
     justify-content: center;
-
+    
     img{
         width: 85%;
         height:600px;
@@ -58,6 +62,7 @@ section{
         animation: bouncing 2s ease 0s infinite  alternate-reverse both ;
     }
 }
+
 
 #desc-section2 .img-acc img{
    animation-delay: 1s;
@@ -88,6 +93,9 @@ section{
 
 section:has(#accordion-section,#accordion-section2,#accordion-section3){
     scroll-snap-align: center;
+}
+.accordion-section{
+    flex: 1 1 1;
 }
 .accordion-button:not(.collapsed) {
     color: var(--primary-color);
@@ -143,7 +151,7 @@ strong{
         color: var(--accent-color);
     }
     .lt-btn{
-        width: 190px;
+        width: clamp(190px,12vw,500px);
         display:flex;
         align-items: center;
         justify-content: space-between;
