@@ -3,7 +3,6 @@ Profile/
 vendor/
 images/
 logo/
-favicon/
 admin/img/
 admin/uploads/
 admin/plugins/
@@ -17,5 +16,3 @@ admin/js/adminlte.js
 admin/js/adminlte.js.map
 admin/js/adminlte.min.js
 admin/js/adminlte.min.js.map
-composer.json
-composer.lock
