@@ -7,7 +7,8 @@ if(isset($_POST['search'])) {
     $output = "";
     $col_1 = "project_name";
     $col_2 = "project_desc";
-    $response = $db->search('projects',$search_val,$col_1,$col_2);
+    $search = "WHERE project_name LIKE '%{$search_val}%' OR project_desc LIKE '%{$search_val}%'";
+    $response = $db->search('projects',"*",null,$search,null);
 if ($response != false && !empty($response)) {
 
     foreach ($response as $data) {
