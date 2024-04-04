@@ -23,7 +23,31 @@
   margin-left: auto;
   margin-right: auto;
 }
-
+select {
+  /* Change the background color of the dropdown */
+  background-color: #f2f2f2;
+  /* Change the text color of the dropdown */
+  color: #333; 
+  /* Change the border color of the dropdown */
+  border-color: #ccc;
+}
+select option:not(:first-child){
+  /* Change the background color of the options */
+  background-color: #1E1E1E;
+  /* Change the text color of the options */
+  padding: 5px !important;
+  color: #fff;
+}
+select option:first-child{
+  /* Change the background color of the options */
+  background-color: #333333;
+  /* Change the text color of the options */
+  padding: 5px !important;
+  color: rgb(255, 136, 0);
+}
+select::-ms-expand {
+  color: #666;
+}
 .card-body  td:has(ul) li{
   list-style-type: square;
   list-style-position: inside;

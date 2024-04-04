@@ -1,6 +1,6 @@
 <?php
 
-require_once "crud.php";
+require_once "crud.php"; 
 
 $limit = 10;
 $page = (isset($_POST['page'])) ? htmlspecialchars($_POST['page']) : 1;

@@ -64,18 +64,16 @@
                                                         </div>
                                                     </div>
                                                 </div>	                                                                      
-                                            </div>                                          
+                                            </div> 
+                                            <div class="col-md">
+                                                <div class="mb-3">
+                                                    <label for="location">Location</label>
+                                                    <input type="text" name="location" id="location" class="form-control" placeholder="e.g., Mirpurkhas, Sindh, Pakistan">	
+                                                </div>
+                                            </div>                                         
                                         </div>
                                     </div>	                                                                      
                                 </div>
-                                <!-- <div class="card mb-3">
-                                    <div class="card-body">
-                                        <h2 class="h4 mb-3">Media</h2>								
-                                        <div class="input-group">
-                                            <input type="file" class="form-control" id="inputGroupFile04"  name="fileUpload">
-                                        </div>
-                                    </div>	                                                                      
-                                </div> -->
                             </div>
                             <div class="col-md-4">
                                 <div class="card mb-3">
@@ -95,17 +93,26 @@
                                         <div class="mb-3">
                                             <label for="category">Category</label>
                                             <select name="category" id="category" class="form-control">
-                                                <option value="">Electronics</option>
-                                                <option value="">Clothes</option>
-                                                <option value="">Furniture</option>
-                                            </select>
+                                            <option selected disabled>-- Select a Category --</option>
+											<?php 
+												require_once "../admin/php/crud.php";
+												$db = new Database();
+												$response = $db->select('categories','cid,name',null,"status = '1'",'name ASC',null,null);
+												if($response != false){
+													foreach ($response as $category) {
+														echo "<option value='{$category['cid']}'>{$category['name']}</option>";
+													}
+												}else{
+													echo "<option disabled>--Categories not found--</option>";
+												}
+											?>
+											</select>
+											<p></p>
                                         </div>
                                         <div class="mb-3">
                                             <label for="category">Sub category</label>
                                             <select name="sub_category" id="sub_category" class="form-control">
-                                                <option value="">Mobile</option>
-                                                <option value="">Home Theater</option>
-                                                <option value="">Headphones</option>
+                                            <option selected disabled>-- Select a Sub Category --</option>
                                             </select>
                                         </div>
                                     </div>
@@ -156,7 +163,8 @@
             $("input[type='submit']").on("click",function(e){
                 e.preventDefault();
             });
-                $("#upload").click(function(){
+            $("#upload").click(function(){
+                    $('#upload-project').modal('hide');
                     const formData = new FormData(form[0]);
                     $.ajax({
                         url : "php/save-project.php",
@@ -168,17 +176,36 @@
                         success : function (response) {
                             if(response.status == true) {
                                 form.trigger("reset");
-                                $('#upload-project').modal('hide');
                                 $('.summernote').summernote('code', ''); 
                                 scs("Successfull",response.message);
                             }else{
-            
-                                $('#upload-project').modal('hide');
+        
                                 err("Error!",response.message);
                             }
                         }
                     });
                 });
+
+    $('#category').change(function(){
+    let category_id = $(this).val();
+    $.ajax({
+            url : "./php/project-sub-category.php",
+            type : 'GET',
+            data : { category_id: category_id},
+            dataType : 'json',
+            success: function(response){
+
+                $('#sub_category').find('option').not(':first').remove();
+                $.each(response,function(key, item){
+                    $('#sub_category').append(`<option value="${item.category_id}">${item.name}</option>`);
+                });
+            }
+            ,error:function(jqXHR, exception) {
+            console.error("Something went wrong");
+            }
+    });
+    });
+
             
             
         </script>
