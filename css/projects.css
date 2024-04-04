@@ -18,15 +18,15 @@
 .heading h1{
     font-size: clamp(14px,1.8vw,145px);
     text-align: center;
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
     font-weight: 50;
     letter-spacing: .4em;
 }
 .heading h2{
     font-size: clamp(20px,4vw,145px);
-    color: var(--accent-color);
+    /* color: var(--accent-color); */
 }
-:is(h1,h2){
+:is(.project-head,.projects-head) :is(h1,h2){
     transform: translateY(60px);
     filter: blur(20px);
     opacity: 0;
@@ -50,7 +50,7 @@
   
 .projects,.project{
     height: 100%;
-    background-color: #1E1E1E;
+    /* background-color: #1E1E1E; */
     padding: max(20px,4vw) 3vw;
 }
 .projects-container{
@@ -77,9 +77,9 @@
         padding: 10px 15px;
         bottom: 0;
         left: 0;
-        background-color: var(--primary-color);
+        /* background-color: var(--primary-color); */
         width: 70%;
-        color: var(--accent-color);
+        /* color: var(--accent-color); */
         transform: translateY(100%);
         transition: .5s ease;
 

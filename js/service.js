@@ -1,50 +1,11 @@
-  // Navbar JS
-  var h = document.querySelector('.header'),
-  scroll_arrow = document.querySelector('header .arr-dwn'),
-  services = document.querySelector("#srv"),
-  services_container = document.querySelector("#srv .srv-container"),
-  navbar = document.querySelector('.nav');
-  
-  
-  services.style.display = "none";
-  services_container.style.opacity = '0';
-  services_container.style.transition = 'opacity .4s ease';
-  
-  
-  
-   scroll_arrow.addEventListener('click',function(){
-      h.classList.toggle('active');
-  
-      if ( h.classList.contains('active') ) {
-          h.style.borderRadius = '10px';
-          navbar.style.borderRadius = '8px 8px 0 0';
-          h.style.transform = 'scaleX(.95)';
-          services.style.display ="flex";
-  
-  
-          setTimeout(() => {
-              h.style.top = '7px';
-              h.style.height = 'calc(100vh - 50px)';
-          }, 500);
-  
-          setTimeout(() => {
-              services_container.style.opacity = '1';
-          }, 900);
-  
-          
-      } else {
-          setTimeout(() => {
-              navbar.style.borderRadius = '0';
-              h.style.borderRadius = '0';
-              h.style.transform = 'scaleX(1)';
-          }, 700);
-          services_container.style.opacity = '0';
-          h.style.top = '0';
-          services.style.display = "none";
-          h.style.height = '';
-      }
-  
-  });
+import { navAnime } from "./modules.js";
+
+document.addEventListener("DOMContentLoaded",() => {
+
+  const scroll_arrow = document.querySelector('header .arr-dwn');
+  scroll_arrow.addEventListener('click',navAnime);
+
+});
 
 var screenWidth = window.innerWidth;
 var slides_per_view = 3;

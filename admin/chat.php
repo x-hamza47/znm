@@ -1,4 +1,4 @@
-<?php require_once "header.php"; ?>
+<?php require_once "./header.php"; ?>
 
 
 			<!-- Content Wrapper. Contains page content -->
@@ -98,4 +98,4 @@
 				</section>
 				<!-- /.content -->
 			</div>
-			<?php  require_once "footer.php" ; ?>
+			<?php  require_once "./footer.php" ; ?>

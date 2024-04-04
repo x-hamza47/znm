@@ -23,8 +23,16 @@ AUTO_INCREMENT = 1;
 ALTER TABLE projects
 AUTO_INCREMENT = 1;
 
-DROP Table messages;
+ALTER TABLE categories
+AUTO_INCREMENT = 1;
+
 DROP Table projects;
+DROP Table sub_categories;
+
+ALTER TABLE projects ADD location varchar(200) NOT NULL;
+ALTER TABLE projects ADD project_id varchar(100) NOT NULL UNIQUE;
+ALTER TABLE projects MODIFY location varchar(200) AFTER project_desc;
+ALTER TABLE projects MODIFY project_id varchar(100) AFTER id;
 
 CREATE TABLE projects
 (
@@ -34,3 +42,9 @@ CREATE TABLE projects
     project_desc TEXT,
     status ENUM('1','0') NOT NULL DEFAULT '1'
 )
+
+ALTER TABLE categories
+MODIFY id BIGINT AUTO_INCREMENT;
+
+ALTER Table sub_categories
+DROP COLUMN category_id;

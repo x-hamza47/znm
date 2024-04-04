@@ -56,3 +56,51 @@ export function clears() {
         progress.removeClass("active");
     }, 300);
 }
+
+  // Navbar JS
+  var h = document.querySelector('.header'),
+  services = document.querySelector("#srv"),
+  services_container = document.querySelector("#srv .srv-container"),
+  navbar = document.querySelector('.nav');
+  
+  services.style.display = "none";
+  services_container.style.opacity = '0';
+  services_container.style.transition = 'opacity .4s ease';
+  let isAnimating = false;
+
+ export function navAnime (){
+    if (isAnimating) return;
+  
+    isAnimating = true;
+      h.classList.toggle('active');
+  
+      if ( h.classList.contains('active') ) {
+          h.style.borderRadius = '10px';
+          navbar.style.borderRadius = '8px 8px 0 0';
+          h.style.transform = 'scaleX(.95)';
+          services.style.display ="flex";
+  
+          setTimeout(() => {
+              h.style.top = '7px';
+              h.style.height = 'calc(100vh - 50px)';
+          }, 500);
+  
+          setTimeout(() => {
+              services_container.style.opacity = '1';
+              isAnimating = false;
+          }, 900);
+  
+      } else {
+          setTimeout(() => {
+              navbar.style.borderRadius = '0';
+              h.style.borderRadius = '0';
+              h.style.transform = 'scaleX(1)';
+          }, 700);
+          services_container.style.opacity = '0';
+          h.style.top = '0';
+          services.style.display = "none";
+          h.style.height = '';
+          isAnimating = false;
+      }
+    }
+  

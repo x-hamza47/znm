@@ -1,5 +1,5 @@
 <?php
-	require_once "header.php";
+	require_once "./header.php";
 ?>
 <!-- delete modal -->
 <div class="modal fade" id="deleteDrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -67,19 +67,19 @@
 											<th>Action</th>
 										</tr>
 									</thead>
-									<tbody id="tb-body">
+									<tbody id="tb-body" class="table-secondary">
 						
 									</tbody>
 								</table>										
 							</div>
 							<div class="card-footer clearfix">
-								<ul class="pagination  m-0 float-right">
+								<!-- <ul class="pagination  m-0 float-right">
 								  <li class="page-item"><a class='page-link' href="#">«</a></li>
 								  <li class="page-item"><a class="page-link" href="#">1</a></li>
 								  <li class="page-item"><a class="page-link" href="#">2</a></li>
 								  <li class="page-item"><a class="page-link" href="#">3</a></li>
 								  <li class="page-item"><a class="page-link" href="#">»</a></li>
-								</ul>
+								</ul> -->
 							</div>
 						</div>
 					</div>
@@ -189,4 +189,4 @@ res.err("Error","Mail not found!");
 
 
 </script>
-				<?php  require_once "footer.php" ; ?>
+				<?php  require_once "./footer.php" ; ?>

@@ -101,6 +101,18 @@
 									<p>Inbox</p>
 								</a>
 							</li>
+							<li class="nav-item">
+								<a href="categories.php" class="nav-link">
+									<i class="fas fa-file-alt nav-icon"></i>
+									<p>Category</p>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="sub-category.php" class="nav-link">
+									<i class="fas fa-file-alt nav-icon"></i>
+									<p>Sub Category</p>
+								</a>
+							</li>
 		
 							<li class="nav-item mt-5 " data-bs-toggle="modal" data-bs-target="#staticBackdrop">
 								<a href="#" class="nav-link" >

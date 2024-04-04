@@ -20,6 +20,8 @@
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/colors.css">
+      <link rel="stylesheet" href="css/lets-talk.css">
       <link rel="stylesheet" href="css/service.css">
 </head>
 <body>
@@ -34,12 +36,13 @@
                 </a>
                 
            
-              <ul class="links">
-                <li><a href="index.php#home">Home</a></li>
+                <ul class="links">
+                <li><a href="index.php#home" class="active">Home</a></li>
                 <li><a href="index.php#about-us">About Us</a></li>
-                <li><a href="index.php#service" class="active">Services</a></li>
+                <li><a href="index.php#service">Services</a></li>
+                <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="index.php#clients">Clients</a></li>
-                <li><a href="index.php#projects">Projects</a></li>
+                <li><a href="projects.php">Projects</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
               </ul>
 
@@ -141,54 +144,64 @@
         </section>
     
         </header>
-      <div class="container-fluid bg-black" style="background: url('./images/interior3.jpg') no-repeat;height: 70vh; background-position: center;background-size:cover;"></div>
-    <main class="container-fluid main-ser-sec">
-      <section id="srv-head" class="container-fluid  d-flex justify-content-around pt-3 pb-3">
-        <div id="srv-heading" class="pt-3 pb-3 w-50 border-bottom ">
-          <h1 class="fw-bold ">Our Services</h1>
+      <section class="service-head d-flex justify-content-center align-items-center " id="service-head">
+        <div class="heading ">
+            <h1>Our Services</h1>
+            <h2>Having an idea. Creating spaces</h2>
         </div>
-        <div class=" d-flex">
+      </section>
+    <main class="container-fluid main-ser-sec">
+      <!-- <section id="srv-head" class="container-fluid  d-flex justify-content-around pt-md-1 pb-md-1 pt-3 pb-3">
+        <div class=" d-flex container-fluid justify-content-around ">
         <div id="srv-link-1" class="p-3">
           <ul class="srv-links pt-4">
             <li><a href="#topography">Topgography</a></li>
             <li><a href="#design-consultant">Design Consultant</a></li>
-            <li><a href="#architect-service">Architectural Services</a></li>
-            <li><a href="#interior-design">Interior Designing</a></li>
           </ul>
         </div>
         <div id="srv-link-2" class="p-3">
           <ul class="srv-links pt-4">
+            <li><a href="#architect-service">Architectural Services</a></li>
+            <li><a href="#interior-design">Interior Designing</a></li>
+          </ul>
+        </div>
+        <div id="srv-link-3" class="p-3">
+          <ul class="srv-links pt-4">
             <li><a href="#construction">Construction</a></li>
             <li><a href="#web-dev">Web Development</a></li>
+          </ul>
+        </div>
+        <div id="srv-link-4" class="p-3">
+          <ul class="srv-links pt-4">
             <li><a href="#graphic-design">Graphic Designing</a></li>
             <li><a href="#event-man">Event Management</a></li>
           </ul>
         </div>
         </div>
-      </section>
+      </section> -->
 
       <div class="container-fluid p-5 pt-4 pb-4 mt-4">
         <h2 class="fw-normal border-bottom pb-4">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
       </div>
     <!-- section 1 -->
-      <section class="container d-flex justify-content-center" id="desc-section">
+      <section class="desc-section container-fluid d-flex flex-sm-column flex-lg-row justify-content-between ">
         <!-- image -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item active img-acc mt-5 p-2">
               <img src="./images/topography-3.png" class="d-block a-img ">
             </div>
-            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item  img-acc mt-5 p-2">
               <img src="./images/background-6.png" class="d-block a-img">
             </div>
-            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item  img-acc mt-5 p-2">
               <img src="./images/background-7.png" class="d-block a-img">
             </div>
           </div>
         </div>
         <!-- image end -->
         <!-- accordion -->
-        <div id="accordion-section" class="flex-fill w-50 mt-5 p-4">
+        <div id="accordion-section" class=" w-100 mt-5 p-4">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item" >
               <h2 class="accordion-header" id="topography">
@@ -306,9 +319,9 @@
 
       </section>
       <!-- section 2 -->
-      <section class="container-xl container-fluid d-flex justify-content-center flex-row-reverse" id="desc-section2">
+      <section class="desc-section container-fluid d-flex flex-sm-column justify-content-center flex-lg-row-reverse">
         <!-- image -->
-        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active img-acc flex-fill mt-5 p-2">
               <img src="./images/construction-4.jpg" class="d-block a-img ">
@@ -323,7 +336,7 @@
         </div>
         <!-- image end -->
         <!-- accordion -->
-        <div id="accordion-section2" class="flex-fill w-50 mt-3 p-4">
+        <div id="accordion-section2" class="w-100 mt-3 p-4">
           <div class="container-xl container-fluid mb-4">
             <h2 class="fw-normal" style="font-size: 28px;">Expert services for development and construction.</h2>
           </div>
@@ -389,10 +402,10 @@
       </section>
 
          <!-- section 3 -->
-         <section class="container-xl container-fluid d-flex justify-content-center" id="desc-section3">
+         <section class="desc-section container-fluid d-flex flex-sm-column flex-lg-row justify-content-center">
           <!-- image -->
              <!-- image -->
-          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active img-acc flex-fill mt-5 p-2">
               <img src="./images/web-background-5.jpg" class="d-block a-img ">
@@ -408,7 +421,7 @@
         <!-- image end -->
           <!-- image end -->
           <!-- accordion -->
-          <div id="accordion-section3" class="flex-fill w-50 mt-3 p-4">
+          <div id="accordion-section3" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
               <h2 class="fw-normal " style="font-size: 28px;">Expert Services for Web Development and Graphic Designing.</h2>
             </div>
@@ -460,24 +473,24 @@
           <!-- accordion end -->
         </section>
          <!-- section 4 -->
-         <section class="container-xl container-fluid d-flex flex-row-reverse justify-content-center" id="desc-section3">
+         <section class="desc-section container-fluid d-flex flex-lg-row-reverse flex-sm-column justify-content-center" >
           <!-- image -->
-          <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+          <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
-            <div class="carousel-item active img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item active img-acc mt-5 p-2">
               <img src="./images/event-1.jpg" class="d-block a-img ">
             </div>
-            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item  img-acc mt-5 p-2">
               <img src="./images/event-2.jpg" class="d-block a-img">
             </div>
-            <div class="carousel-item  img-acc flex-fill mt-5 p-2">
+            <div class="carousel-item  img-acc mt-5 p-2">
               <img src="./images/event-3.jpg" class="d-block a-img">
             </div>
           </div>
         </div>
         <!-- image end -->
           <!-- accordion -->
-          <div id="accordion-section3" class="flex-fill w-50 mt-3 p-4">
+          <div id="accordion-section3" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
               <h2 class="fw-normal " style="font-size: 28px;">Expert Services for Event Management.</h2>
             </div>
@@ -502,7 +515,7 @@
         </section>
 
         </main>
-    <section class="container-fluid mt-5 pt-2" id="lt-sec">
+    <!-- <section class="container-fluid pt-2" id="lt-sec">
       <div class="lt-bx d-flex align-items-center justify-content-center flex-column ">
         <div class="lt-head w-75 text-center ">
           <h1>Have a project in mind?</h1>
@@ -514,7 +527,8 @@
           <a href="index.php#contact" >Let's Talk </a><i class='bx bx-right-top-arrow-circle p-2 ml-3' ></i>
         </div>
       </div>
-    </section>
+    </section> -->
+    <?php require_once "./pages/lets-talk.php";  ?>
 
     <!-- Footer  -->
 
@@ -619,5 +633,5 @@
 <script src="admin/plugins/jquery/jquery.min.js"></script>
 <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-<script src="./js/service.js"></script>
+<script type="module" src="./js/service.js"></script>
 </html>

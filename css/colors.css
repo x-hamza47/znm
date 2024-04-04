@@ -1,0 +1,99 @@
+:root{
+    --primary-color : #f07b26;
+    --secondary-color : #535a60;
+    --dark-black :#212121;
+    --dark-black-2:#1E1E1E;
+    --accent-color : #fff;
+    --glass-primary:rgba(239, 120, 60, 0.1);
+    --glass-sec:rgba(83,90,96,.2);
+}
+
+html::-webkit-scrollbar,
+html::-webkit-scrollbar-track,.accordion-body::-webkit-scrollbar-track{
+    background-color: var(--secondary-color) !important;
+}
+.header .arr-dwn,.header .nav,
+.srv-container .cards .drawing-detail:hover {
+    background-color: var(--glass-primary);
+    color: var(--accent-color);
+}
+
+.header .nav a,.content button,
+.home .slider :is(.prev,.next):hover,
+:is(.about-us,.abt-service) .content .info-text,
+.service-bx :is(h3,.serv-detail),
+.serv-btn a,textarea,.inp_grp input,
+form .sub-btn button,.footer-links,
+:is(.quick-links,.social-links) h5,.copyright-text,
+#lt-sec .lt-head > h1,#lt-sec .lt-sub-head > h2,
+#lt-sec .lt-btn,#lt-sec .lt-btn a,
+:is(.projects-head,.project-head) .heading :is(h1,h2),
+.projects .project-bx .project-layer,
+.service-head :is(h1,h2){
+    color: var(--accent-color);
+}
+
+.content button:hover,
+.clients-container .client-slider,
+#lt-sec .lt-btn:hover{ 
+    color: var(--dark-black);
+    background: var(--accent-color);
+}
+
+.toast,.accordion-button:not(.collapsed){
+    background: var(--accent-color);
+}
+
+html::-webkit-scrollbar-thumb,
+.accordion-body::-webkit-scrollbar-thumb,
+.serv-btn,.inp_grp::before,
+form .sub-btn button,.footer-links:hover i,
+.social-links a,.projects .project-bx .project-layer{
+    background: var(--primary-color);
+}
+
+.home .slider :is(.prev,.next):active,
+.slider .img .content h2,
+.about-us .abt-head,:is(.about-us,.abt-service) .content :is(strong,h3,dt),
+li::marker,
+.visits .head-container,
+.service-sec .head-container > h2,
+.license-sec .head-container > h2,
+.clients-container .clients-heading,.contact-heading,
+:is(textarea,.inp_grp input):focus :is(label,i),
+:is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label,
+.quick-links a:hover ,
+.copyright-text a, #srv-head .srv-links li:hover,
+.accordion-button:not(.collapsed),strong,
+.sum-list > li::before,
+.detail-container h4{ 
+    color: var(--primary-color);
+}
+
+.social-links a:is(:hover,:active) {
+    color: var(--primary-color);
+    background-color: var(--secondary-color) !important;
+}
+/* Secondary colors */
+
+.header.active,.header.active .nav,
+.srv-container .cards .drawing-detail{
+    background-color: var(--glass-sec);
+}
+.inp_grp i ,.quick-links ul > li  a,
+.social-links a,.accordion-body details summary{
+    color: var(--secondary-color);
+}
+:is(.about-us,.abt-service,.clients-container,.visits),
+.contact_section .contact-container .form_container,
+textarea,textarea:focus + label,.inp_grp :is(input,i),
+:is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label,
+.projects,.project{
+    background: var(--dark-black-2);
+}
+
+.service-sec,
+.license-sec,
+.contact_section{
+    background: var(--dark-black);
+}

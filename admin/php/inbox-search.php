@@ -6,7 +6,8 @@ $db = new Database();
 $output = "";
 $col_1 = "sender_name";
 $col_2 = "sender_email";
-$response = $db->search('messages',$search_val,$col_1,$col_2);
+$search = "WHERE sender_name LIKE '%{$search_val}%' OR sender_email LIKE '%{$search_val}%'";
+$response = $db->search('messages',"*",null,$search,null);
 
  if ($response != false && !empty($response)) {
     $i = 1;
@@ -34,7 +35,7 @@ $response = $db->search('messages',$search_val,$col_1,$col_2);
         
         echo $output;
  }else{
-    echo "<h2 class='text-warning m-4 fw-bolder '>No Record found.</h2>";
+    echo "<h2 class='text-warning m-4 fw-bolder w-100'>No Record found.</h2>";
  }
 
 }else{

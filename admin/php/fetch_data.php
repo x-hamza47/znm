@@ -2,7 +2,7 @@
 
 require_once "crud.php";
 
-$limit = 6;
+$limit = 10;
 $page = (isset($_POST['page'])) ? htmlspecialchars($_POST['page']) : 1;
 $db = new Database();
 $output = "";

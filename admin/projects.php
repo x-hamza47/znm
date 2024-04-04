@@ -1,4 +1,4 @@
-<?php require_once "header.php"; ?>
+<?php require_once "./header.php";?>
 
 <!-- delete modal -->
 <div class="modal fade" id="deleteDrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -64,7 +64,7 @@
 											<th width="120">Action</th>
 										</tr>
 									</thead>
-									<tbody id="tb-body">								
+									<tbody id="tb-body" class="table-secondary">								
 									</tbody>
 								</table>										
 							</div>
@@ -191,4 +191,4 @@ res.err("Error","Project not found!");
 
 
 </script>
-		<?php  require_once "footer.php" ; ?>
+<?php  require_once "./footer.php" ; ?>

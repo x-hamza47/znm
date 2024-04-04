@@ -1,14 +1,14 @@
 <?php
 require_once "crud.php";
 
-$limit = 6;
+$limit = 10;
 $page = (isset($_POST['page'])) ? htmlspecialchars($_POST['page']) : 1;
 $db = new Database();
 $output = "";
 $response = $db->select("projects","*",null,null,"id DESC",$limit,$page);
 
 foreach ($response as $data) {
-    $output .= "<tr class='table-secondary'>
+    $output .= "<tr>
                 <td>".(file_exists("../uploads/".$data['project_image']) ?'<img src="uploads/'.$data['project_image'].'" class="img-thumbnail">':  '<img src="uploads/default-150x150.png" class="img-thumbnail">'). "</td>
                 <td class='fw-bold'>{$data['project_name']}</td>
                 <td class='text-justify'>{$data['project_desc']}</td>

@@ -19,6 +19,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/carousel.css">
+      <link rel="stylesheet" href="css/colors.css">
       <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -28,7 +29,6 @@
 
             <a href="" id="logo">
                 <img src="images/logo-2.png" alt="logo">
-                <!-- <span> <h3>ZNM Enterprises</h3></span> -->
             </a>
             
            
@@ -36,7 +36,7 @@
                 <li><a href="index.php#home" class="active">Home</a></li>
                 <li><a href="index.php#about-us">About Us</a></li>
                 <li><a href="index.php#service">Services</a></li>
-                <li><a href="index.php#service">Design Gallery</a></li>
+                <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="projects.php">Projects</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
@@ -129,7 +129,7 @@
             <div class="info-img img2"></div>
 
       </div>
-  </div>
+
         <div class="content">
           <div class="info-img img1"></div>
           <div class="info-text txt1">
@@ -162,7 +162,7 @@
 
         </div>
 
-
+        </div>
 <!-- Company CEO Card -->
     <!-- <div class="author">
      <h2 class="auth-heading">Meet Our <span></span></h2>
@@ -235,17 +235,7 @@
             </div>
           <button class="serv-btn" ><a href="license.php">Read More</a></button>
         </div>
-    <!-- service bx-4 -->
-          <!-- <div class="service-bx">
-          <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M160-120v-375l-72 55-48-64 440-336 440 336-48 63-72-54v375H160Zm80-80h480v-356L480-739 240-556v356Zm0 0h480-480Zm80-160q-17 0-28.5-11.5T280-400q0-17 11.5-28.5T320-440q17 0 28.5 11.5T360-400q0 17-11.5 28.5T320-360Zm160 0q-17 0-28.5-11.5T440-400q0-17 11.5-28.5T480-440q17 0 28.5 11.5T520-400q0 17-11.5 28.5T480-360Zm160 0q-17 0-28.5-11.5T600-400q0-17 11.5-28.5T640-440q17 0 28.5 11.5T680-400q0 17-11.5 28.5T640-360Z"/></svg>            
-          <h3>Interior Designing</h3>
-            <div class="serv-detail">
-              <p>
-              At ZNM, each project, with its diversity, challenges, and opportunities, guides us along...
-              </p>
-            </div>
-            <button class="serv-btn" ><a href="service.php#interior-design">Read More</a></button>
-          </div> -->
+
     <!-- service bx-5 -->
           <div class="service-bx">
           <svg class="serv-ico" xmlns="http://www.w3.org/2000/svg"  viewBox="0 -960 960 960" ><path d="M756-120 537-339l84-84 219 219-84 84Zm-552 0-84-84 276-276-68-68-28 28-51-51v82l-28 28-121-121 28-28h82l-50-50 142-142q20-20 43-29t47-9q24 0 47 9t43 29l-92 92 50 50-28 28 68 68 90-90q-4-11-6.5-23t-2.5-24q0-59 40.5-99.5T701-841q15 0 28.5 3t27.5 9l-99 99 72 72 99-99q7 14 9.5 27.5T841-701q0 59-40.5 99.5T701-561q-12 0-24-2t-23-7L204-120Z"/></svg>          
@@ -442,161 +432,7 @@
   </div>
   </section>
 
-  <section class="clients-container" id="clients">
-        <!-- Clients -->
-    
-        <!-- <div class=""> -->
-      <div class="clients-heading">
-        <h2>Our <span>Clients</span></h2>
-      </div>
-      <!-- slider -->
-      <div class="client-slider">
-        <div class="slider_track">
-          <!-- Slide 1 -->
-          <div class="client-slide">
-            <img src="./logo/unicol-logo.png">
-          </div>
-          <!-- Slide 2 -->
-          <div class="client-slide">
-            <img src="./logo/multiresin.png">
-          </div>
-          <!-- Slide 3 -->
-          <div class="client-slide">
-            <img src="./logo/Mcon-Real-Estate.png">
-          </div>
-          <!-- Slide 4 -->
-          <div class="client-slide">
-            <img src="./logo/dawlance-2.png">
-          </div>
-          <!-- Slide 5 -->
-          <div class="client-slide">
-            <img src="./logo/Aerolube.png">
-          </div>
-          <!-- Slide 6 -->
-          <div class="client-slide">
-            <img src="./logo/pso.png">
-          </div>
-          <!-- Slide 7 -->
-          <div class="client-slide">
-            <img src="./logo/puma_energy-4.png">
-          </div>
-          <!-- Slide 8 -->
-          <div class="client-slide">
-            <img src="./logo/kamil-converters.png">
-          </div>
-  
-        </div>
-        <div class="slider_track">
-          <!-- Slide 1 -->
-          <div class="client-slide">
-            <img src="./logo/unicol-logo.png">
-          </div>
-          <!-- Slide 2 -->
-          <div class="client-slide">
-            <img src="./logo/multiresin.png">
-          </div>
-          <!-- Slide 3 -->
-          <div class="client-slide">
-            <img src="./logo/Mcon-Real-Estate.png">
-          </div>
-          <!-- Slide 4 -->
-          <div class="client-slide">
-            <img src="./logo/dawlance-2.png">
-          </div>
-          <!-- Slide 5 -->
-          <div class="client-slide">
-            <img src="./logo/Aerolube.png">
-          </div>
-          <!-- Slide 6 -->
-          <div class="client-slide">
-            <img src="./logo/pso.png">
-          </div>
-          <!-- Slide 7 -->
-          <div class="client-slide">
-            <img src="./logo/puma_energy-4.png">
-          </div>
-          <!-- Slide 8 -->
-          <div class="client-slide">
-            <img src="./logo/kamil-converters.png">
-          </div>
-  
-        </div>
-      </div>
-      <!-- Slider 2 -->
-      <div class="client-slider reverse">
-        <div class="slider_track">
-          <!-- Slide 1 -->
-          <div class="client-slide">
-            <img src="./logo/kompass-logo.png">
-          </div>
-          <!-- Slide 2 -->
-          <div class="client-slide">
-            <img src="./logo/bsk-petroleum.png">
-          </div>
-          <!-- Slide 3 -->
-          <div class="client-slide">
-            <img src="./logo/SGCLOGO.png">
-          </div>
-          <!-- Slide 4 -->
-          <div class="client-slide">
-            <img src="./logo/ssscientific-system.jpg">
-          </div>
-          <!-- Slide 5 -->
-          <div class="client-slide">
-            <img src="./logo/taj-gasoline.png">
-          </div>
-          <!-- Slide 6 -->
-          <div class="client-slide">
-            <img src="./logo/adamjee-pharma.jpg">
-          </div>
-          <!-- Slide 7 -->
-          <div class="client-slide">
-            <img src="./logo/shiraz.png">
-          </div>
-          <!-- Slide 8 -->
-          <div class="client-slide">
-            <img src="./logo/pso.png">
-          </div>
-  
-        </div>
-        <div class="slider_track">
-          <!-- Slide 1 -->
-          <div class="client-slide">
-            <img src="./logo/kompass-logo.png">
-          </div>
-          <!-- Slide 2 -->
-          <div class="client-slide">
-            <img src="./logo/bsk-petroleum.png">
-          </div>
-          <!-- Slide 3 -->
-          <div class="client-slide">
-            <img src="./logo/SGCLOGO.png">
-          </div>
-          <!-- Slide 4 -->
-          <div class="client-slide">
-            <img src="./logo/ssscientific-system.jpg">
-          </div>
-          <!-- Slide 5 -->
-          <div class="client-slide">
-            <img src="./logo/taj-gasoline.png">
-          </div>
-          <!-- Slide 6 -->
-          <div class="client-slide">
-            <img src="./logo/adamjee-pharma.jpg">
-          </div>
-          <!-- Slide 7 -->
-          <div class="client-slide">
-            <img src="./logo/shiraz.png">
-          </div>
-          <!-- Slide 8 -->
-          <div class="client-slide">
-            <img src="./logo/pso.png">
-          </div>
-  
-        </div>
-      </div>
-  <!-- </div> -->
-  </section>
+ <?php require_once './pages/clients.php'; ?>
 
 <!-- Project Section -->
 
@@ -688,109 +524,10 @@
 
 </section>
 
-<!-- Footer  -->
+<?php  require_once "./pages/footer.php"; ?>
 
-<footer class="footer" id="footer">
-
-  <div class="footer-container">
-    <!-- contact -->
-    <div class="contact_nav">
-      <a href="tel:+923353439611" class="footer-links">      
-        <i class='bx bxs-phone' ></i>
-        <span> +92 345 8424484 </span>
-      </a>
-
-      <a href="mailto:znm.enterprises3@outlook.com" class="footer-links">
-        <i class='bx bxs-envelope' ></i>
-        <span> znm.enterprises3@outlook.com</span>
-      </a>
-
-      <a href="#map" class="footer-links">
-        <i class='bx bxs-map'></i>
-        <span>House # 11/1, Modern Housing 
-          Society, P.E.C.H.S Block-3,
-          Karachi.</span>
-      </a>
-    </div>
-
-    <!-- Links -->
-
-    <div class="info-main">
-
-      <div class="links-row">
-        <!--  quick links -->
-        <div class="quick-links">
-          <h5>Usefull links</h5>
-          <ul>
-            <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
-              <a href="#about-us">About Us</a>
-            </li>
-            <li>
-              <a href="#service">Services</a>
-            </li>
-            <li>
-              <a href="#projects">Project</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-<!-- social links -->
-        <div class="social-links">
-          <h5>Social Media</h5>
-
-          <a href="#">
-            <i class='bx bxl-facebook'></i>
-          </a>
-          <a href="#">
-            <i class='bx bxl-instagram-alt'></i>
-          </a>
-          <a href="#">
-            <i class='bx bxl-twitter' ></i>
-          </a>
-          <a href="#">
-            <i class='bx bxl-linkedin' ></i>
-          </a>
-        </div>
-
-        <!-- search bar -->
-
-        <div class="footer-logo-bx">
-          <img src="./images/logo-2.png" alt="znm logo">
-          <!-- <div class="search-bx">
-            <i class='bx bx-search'></i>
-            <input type="search" placeholder="Search...">
-          </div> -->
-
-        </div>
-
-      </div>
-
-    </div>
-
-  <hr class="footer-line">
-
-  <div class="copyright">
-    <span class="copyright-text">© <span id='cp-year'></span> All Rights Reserved By ZNM Enterprises | <a href="https://hamza-web.000webhostapp.com/" target="_blank">Developed and Designed by @Hamza Amir</a></span>
-  </div>
-
-  </div>
-
-
-</footer>
-
-<!-- Footer end -->
-</body>
-
-<!-- jQuery -->
-<script src="admin/plugins/jquery/jquery.min.js"></script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-<script src="js/app.js"></script>
+<script src="./js/slider.js"></script>
+<script type="module" src="js/app.js"></script>
 <script type="module" src="js/restrictions.js" loading="lazy" defer></script>
+
 </html>

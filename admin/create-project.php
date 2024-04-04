@@ -1,5 +1,5 @@
 <?php
-	require_once "header.php";
+	require_once "./header.php";
 ?>
 <div class="modal fade" id="upload-project" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered ">
@@ -94,7 +94,7 @@
 			</div>
 			
 		</div>
-        <?php  require_once "footer.php" ; ?>
+        <?php  require_once "./footer.php" ; ?>
  
        <script type="module">
             $(function () {

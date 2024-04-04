@@ -138,6 +138,41 @@ class Database{
         }
         
     }
+    public function deleteCategory($table,string $user,$col_name) {
+        if($this->tableExists($table)) {
+            if (!empty($user) || isset($user)){
+                    $query = "DELETE FROM $table WHERE $col_name = ?";
+                    $stmt = $this->conn->prepare($query);
+                    $stmt->bind_param("s",$user);
+                    if ($stmt->execute()) {
+                        $result = array(
+                            'status' => true,
+                            'message' => 'Deleted successfully.'
+                        );
+                        return $result;
+                    }else{
+                        $result = array(
+                            'status' => false,
+                            'message' => 'The item could not be deleted.'
+                        );
+                        return $result;
+                    }
+            }else{
+                $result = array(
+                    'status' => false,
+                    'message' => 'Item ID not found.'
+                );
+                return $result;
+            }
+        }else{
+            $result = array(
+                'status' => false,
+                'message' => 'Contact your Developer.'
+            );
+            return $result;
+        }
+        
+    }
     
     // public function select($table, $row = "*", $join = null, $where = null, $order = null, $limit = null) {
     //     if ($this->tableExists($table)) {
@@ -179,15 +214,38 @@ class Database{
     //     }
     // }
 
-    public function search($table,$search,$col1, $col2) {
+    public function search($table, $row = "*", $join = null, $search, $order = null) {
         if($this->tableExists(($table))){
-                $sql = "SELECT * FROM $table WHERE $col1 LIKE ? OR $col2 LIKE ? ";
+
+                $sql = "SELECT $row FROM $table";
+                if($join != null) {
+                    $sql .= " $join";
+                }
+                $sql .= " $search";
+
+                if($order != null) {
+                    $sql .= " $order";
+                }
+                $query = $this->conn->query($sql);
+                if ($query->num_rows > 0) {
+                    $result = $query->fetch_all(MYSQLI_ASSOC);
+                    return $result;
+                }else{
+                    return false;
+                }
+        }else{
+            return false;
+        }
+    }
+    public function searchCategory($table,$search,$col) {
+        if($this->tableExists(($table))){
+                $sql = "SELECT * FROM $table WHERE $col LIKE ? ";
                 $query = $this->conn->prepare($sql);
                 $searchParam = "%$search%";
-                $query->bind_param("ss",$searchParam,$searchParam);
+                $query->bind_param("s",$searchParam);
                 if ($query->execute()) {
                     $result = $query->get_result()->fetch_all(MYSQLI_ASSOC);
-                        return $result;
+                    return $result;
                 }else{
                     return false;
                 }
@@ -200,7 +258,7 @@ class Database{
         if ($this->tableExists($table)) {
             $sql = "SELECT $row FROM $table";
                     if ($join != null) {
-                        $sql .= " JOIN $join";
+                        $sql .= " $join";
                     }
                     if ($where != null) {
                         $sql .= " WHERE $where";
@@ -222,6 +280,14 @@ class Database{
                         return false;
                     }
                     
+        }else{
+            return false;
+        }
+    }
+    public function sql($sql){
+        $query = $this->conn->query($sql);
+        if ($query->num_rows > 0) {
+            return  true;
         }else{
             return false;
         }
@@ -375,6 +441,133 @@ class Database{
                 );
                 return $result;
                 exit;
+            }
+        }else{
+            $result = array(
+                'status' => false,
+                'message' => 'Contact your Developer!'
+            );
+            return $result;
+            exit;
+        }
+    }
+
+    public function createCategory($table,$col1,$col2,$col3,$n1,$n2,$n3) {
+        if ($this->tableExists($table)) {
+            if(!empty($col1) && !empty($col2)){
+                $column1 = $this->conn->real_escape_string($col1);
+                $column2 = $this->conn->real_escape_string($col2);
+                $column3 = $this->conn->real_escape_string($col3);
+                $sql = "INSERT INTO $table($n1,$n2,$n3) VALUES(?,?,?)";
+                $query = $this->conn->prepare($sql);
+                $query->bind_param("sss",$column1,$column2,$column3);
+                if ($query->execute()){
+                    $result = array(
+                        'status' => true,
+                        'message' => 'Category Uploaded Successfully.'
+                    );
+                    return $result;
+
+                }else{
+                    $result = array(
+                        'status' => false,
+                        'message' => 'Uploading failed!.'
+                    );
+                    return $result;
+    
+                } 
+            }else{
+                $result = array(
+                    'status' => false,
+                    'message' => 'Please fill out all required fields.'
+                );
+                return $result;
+            
+            }
+        }else{
+            $result = array(
+                'status' => false,
+                'message' => 'Contact your Developer!'
+            );
+            return $result;
+            exit;
+        }
+    }
+
+    public function updateCategory($table, $id, $name, $status) {
+        if($this->tableExists($table)) {
+            if(!empty($name)){
+                $cid = $this->conn->real_escape_string($id);
+                $cat_name = $this->conn->real_escape_string($name);
+                $cat_st = $this->conn->real_escape_string($status);
+                $sql = "UPDATE $table SET name = ? , status = ? WHERE cid = ?";
+                $query = $this->conn->prepare($sql);
+                $query->bind_param("sss",$cat_name,$cat_st,$cid);
+                if ($query->execute()){
+                    $result = array(
+                        'status' => true,
+                        'message' => 'Category Updated Successfully.'
+                    );
+                    return $result;
+
+                }else{
+                    $result = array(
+                        'status' => false,
+                        'message' => 'Uploading failed!.'
+                    );
+                    return $result;
+     
+                }
+            }else{
+                $result = array(
+                    'status' => false,
+                    'message' => 'Please fill out all required fields.'
+                );
+                return $result;
+            
+            }
+        }else{
+            $result = array(
+                'status' => false,
+                'message' => 'Contact your Developer!'
+            );
+            return $result;
+            exit;
+        }
+    }
+
+    public function updateSubCategory($table, $sid, $cid, $name, $status) {
+        if($this->tableExists($table)) {
+            if(!empty($name)){
+                $sid = $this->conn->real_escape_string($sid);
+                $cid = $this->conn->real_escape_string($cid);
+                $cat_name = $this->conn->real_escape_string($name);
+                $cat_st = $this->conn->real_escape_string($status);
+                $sql = "UPDATE $table SET category_id = ? , name = ? ,status = ? WHERE id = ?";
+                $query = $this->conn->prepare($sql);
+                $query->bind_param("sssi",$cid,$cat_name,$cat_st,$sid);
+                if ($query->execute()){
+                    $result = array(
+                        'status' => true,
+                        'message' => 'Sub Category Updated Successfully.'
+                    );
+                    return $result;
+
+                }else{
+                    $result = array(
+                        'status' => false,
+                        'message' => 'Uploading failed!.'
+                    );
+                    return $result;
+     
+                }
+            }else{
+                $result = array(
+                    'status' => false,
+                    'message' => 'Please fill out all required fields.'
+                );
+                return $result;
+            
             }
         }else{
             $result = array(
