@@ -57,9 +57,10 @@
 									<thead class="table-dark ">
 										<tr>
 											<!-- <th width="60">ID</th> -->
-											<th width="240">Thumbnail</th>
+											<th width="200">Thumbnail</th>
 											<th>Project</th>
 											<th>Work Scope</th>
+											<th>Location</th>
 											<th width="100">Status</th>
 											<th width="120">Action</th>
 										</tr>
@@ -131,24 +132,6 @@ $("#search_key").on("keyup",function(){
 		}
 	});
 });
-
-	// // Event listener for "Next" button
-	// $(document).on("click", "#next", function(e) {
-	// e.preventDefault();
-	// var currentPage = parseInt($(".pagination li.active a").attr("id"));
-	// var nextPage = currentPage + 1;
-	// loadTable(nextPage);
-	// pagination(nextPage);
-	// });
-
-	// // Event listener for "Previous" button
-	// $(document).on("click", "#prev", function(e) {
-	// e.preventDefault();
-	// var currentPage = parseInt($(".pagination li.active a").attr("id"));
-	// var prevPage = currentPage - 1;
-	// loadTable(prevPage);
-	// pagination(prevPage);
-	// });
 
 
 $(document).on('click', '.open-pro-btn', function() {

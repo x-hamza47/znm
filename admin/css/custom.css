@@ -14,7 +14,7 @@
   height: 1.7rem;
 }
 
-/* .dropzone {
+.dropzone {
   background: white;
   border-radius: 5px;
   border: 2px dashed rgb(0, 135, 247);
@@ -22,7 +22,7 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-} */
+}
 
 .card-body  td:has(ul) li{
   list-style-type: square;
@@ -32,7 +32,7 @@
   vertical-align: middle;
 }
 .card-body  td:has(img) {
-  width: 200px;
+  /* width: 200px; */
 
   img{
     width: 100%;

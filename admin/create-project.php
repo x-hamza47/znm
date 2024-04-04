@@ -54,18 +54,28 @@
                                                     <label for="description">Description</label>
                                                     <textarea name="description" id="description" cols="30" rows="10" class="summernote" placeholder="Description"></textarea>
                                                 </div>
-                                            </div>                                            
+                                            </div>  
+                                            <div class="card mb-3">
+                                                <div class="card-body">
+                                                    <h2 class="h4 mb-3">Media</h2>								
+                                                    <div id="image" class="dropzone dz-clickable">
+                                                        <div class="dz-message needsclick">    
+                                                            <br>Drop files here or click to upload.<br><br>                                            
+                                                        </div>
+                                                    </div>
+                                                </div>	                                                                      
+                                            </div>                                          
                                         </div>
                                     </div>	                                                                      
                                 </div>
-                                <div class="card mb-3">
+                                <!-- <div class="card mb-3">
                                     <div class="card-body">
                                         <h2 class="h4 mb-3">Media</h2>								
                                         <div class="input-group">
                                             <input type="file" class="form-control" id="inputGroupFile04"  name="fileUpload">
                                         </div>
                                     </div>	                                                                      
-                                </div>
+                                </div> -->
                             </div>
                             <div class="col-md-4">
                                 <div class="card mb-3">
@@ -79,6 +89,27 @@
                                         </div>
                                     </div>
                                 </div> 
+                                <div class="card">
+                                    <div class="card-body">	
+                                        <h2 class="h4  mb-3">Project category</h2>
+                                        <div class="mb-3">
+                                            <label for="category">Category</label>
+                                            <select name="category" id="category" class="form-control">
+                                                <option value="">Electronics</option>
+                                                <option value="">Clothes</option>
+                                                <option value="">Furniture</option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="category">Sub category</label>
+                                            <select name="sub_category" id="sub_category" class="form-control">
+                                                <option value="">Mobile</option>
+                                                <option value="">Home Theater</option>
+                                                <option value="">Headphones</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                    
                             </div>
                         </div>
@@ -97,12 +128,28 @@
         <?php  require_once "./footer.php" ; ?>
  
        <script type="module">
+
+        Dropzone.autoDiscover = false;    
             $(function () {
                 // Summernote
                 $('.summernote').summernote({
                     height: '300px'
                 });
+               
+                const dropzone = $("#image").dropzone({ 
+                    url:  "create-product.html",
+                    maxFiles: 5,
+                    addRemoveLinks: true,
+                    acceptedFiles: "image/jpeg,image/png,image/gif",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }, success: function(file, response){
+                        $("#image_id").val(response.id);
+                    }
+                });
+
             });
+
             import {scs,closeIcon,err,clears}  from "./js/modules2.js";
 
             var form = $("#form");
