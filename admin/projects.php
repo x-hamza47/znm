@@ -57,12 +57,14 @@
 									<thead class="table-dark ">
 										<tr>
 											<!-- <th width="60">ID</th> -->
-											<th width="200">Thumbnail</th>
+											<th width="50">Thumbnail</th>
 											<th>Project</th>
-											<th>Work Scope</th>
+											<th width="200">Work Scope</th>
+											<th>Category</th>
+											<th>Sub Category</th>
 											<th>Location</th>
-											<th width="100">Status</th>
-											<th width="120">Action</th>
+											<th width="10">Status</th>
+											<th width="90">Action</th>
 										</tr>
 									</thead>
 									<tbody id="tb-body" class="table-secondary">								

@@ -373,24 +373,27 @@ class Database{
     
     
     // projects
-    public function uploadProject($table,string $img = null, string $name, string $desc ,string $status = null){
+    public function uploadProject($table, string $name, string $desc, string $cid = null, int $sid = null, string $location = null, string $status){
         if ($this->tableExists($table)) {
             if (!empty($desc) && !empty($name)){
-
-                $img_path = $this->conn->real_escape_string($img);
                 $pro_name = $this->conn->real_escape_string($name);
                 $pro_desc = $this->conn->real_escape_string($desc);
+                $pro_cat = $this->conn->real_escape_string($cid);
+                $pro_sub = $this->conn->real_escape_string($sid);
+                $pro_location = $this->conn->real_escape_string($location);
                 $pro_status = $this->conn->real_escape_string($status);
+                $pro_id = 'pro_id-' . str_pad(mt_rand(1, 999999), 6, '0', STR_PAD_LEFT);
 
-                $sql = "INSERT INTO projects(project_image,project_name,project_desc,status)
-                VALUES(?,?,?,?) ";
+                $sql = "INSERT INTO projects(project_id, project_name, project_desc, category, sub_category, location, status)
+                VALUES(?,?,?,?,?,?,?) ";
                 $query = $this->conn->prepare($sql);
-                $query->bind_param('ssss',$img_path,$pro_name,$pro_desc,$pro_status);
+                $query->bind_param('ssssiss' ,$pro_id, $pro_name, $pro_desc ,$pro_cat, $pro_sub, $pro_location, $pro_status);
                 
                 if($query->execute()) {
                     $result = array(
                         'status' => true,
-                        'message' => 'Project Uploaded Successfully.'
+                        'message' => 'Project Uploaded Successfully.',
+                        'pro_id' => $pro_id
                     );
                     return $result;
                     exit;
@@ -407,6 +410,47 @@ class Database{
                 $result = array(
                     'status' => false,
                     'message' => 'Please fill out all required fields.'
+                );
+                return $result;
+                exit;
+            }
+        }else{
+            $result = array(
+                'status' => false,
+                'message' => 'Contact your Developer!'
+            );
+            return $result;
+            exit;
+        }
+    }
+    public function uploadImages($table,string $id,string $img) {
+        if($this->tableExists($table)) {
+            if(isset($id) && !empty($id) && !empty($img)) {
+                $p_id = $this->conn->real_escape_string($id);
+                $img_name = $this->conn->real_escape_string($img);
+                $sql = "INSERT INTO $table(pid,project_image) VALUES(?,?)";
+                $query = $this->conn->prepare($sql);
+                $query->bind_param("ss",$p_id, $img_name);
+                if($query->execute()) {
+                    $result = array(
+                        'status' => true,
+                        'message' => 'Images Uploaded Successfully.',
+                    );
+                    return $result;
+                    exit;
+                }else{
+                    $result = array(
+                        'status' => false,
+                        'message' => 'Images Uploading Failed.',
+                    );
+                    return $result;
+                    exit;
+                }
+                
+            }else{
+                $result = array(
+                    'status' => false,
+                    'message' => 'Please Upload and image.',
                 );
                 return $result;
                 exit;

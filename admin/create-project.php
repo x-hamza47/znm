@@ -122,7 +122,7 @@
                         </div>
 						
 						<div class="pb-5 pt-3">
-							<input type="submit"  class="btn btn-primary" value="Upload" data-bs-toggle='modal' data-bs-target='#upload-project'>
+							<input type="submit" class="btn btn-primary" value="Upload" data-bs-toggle='modal' data-bs-target='#upload-project'>
 							<a href="projects.php" class="btn btn-outline-dark ml-3">Cancel</a>
 						</div>
                     </form>
@@ -133,39 +133,54 @@
 			
 		</div>
         <?php  require_once "./footer.php" ; ?>
- 
        <script type="module">
 
+           import {scs,closeIcon,err,clears}  from "./js/modules2.js";
+        var dropzone;
         Dropzone.autoDiscover = false;    
-            $(function () {
+        $(function () {
                 // Summernote
                 $('.summernote').summernote({
                     height: '300px'
                 });
                
-                const dropzone = $("#image").dropzone({ 
-                    url:  "create-product.html",
-                    maxFiles: 5,
+                 dropzone = new Dropzone('#image',{ 
+                    url: "php/save-project-img.php",
+                    maxFiles: 4,
+                    uploadMultiple: true,
+                    parallelUploads : 4,
                     addRemoveLinks: true,
-                    acceptedFiles: "image/jpeg,image/png,image/gif",
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    }, success: function(file, response){
-                        $("#image_id").val(response.id);
-                    }
+                    acceptedFiles: "image/jpeg,image/png,image/jpg",
+                    autoProcessQueue: false,
+                    success: function(file, response) {
+                        if(response.status == true) {
+                            setTimeout(() => {
+                                scs("Successfull",response.message);
+                            },5500);
+                        }else{
+                            setTimeout(() => {
+                                err("Error!",response.message);
+                            },5500);
+                        }
+                        
+                    },
+                        complete:function(file){
+                           setTimeout(() => {
+                            this.removeFile(file);
+                           },2000) ;
+                        }
                 });
-
             });
-
-            import {scs,closeIcon,err,clears}  from "./js/modules2.js";
-
+            
+            
+            
             var form = $("#form");
             $("input[type='submit']").on("click",function(e){
                 e.preventDefault();
             });
             $("#upload").click(function(){
-                    $('#upload-project').modal('hide');
-                    const formData = new FormData(form[0]);
+                $('#upload-project').modal('hide');
+                const formData = new FormData(form[0]);
                     $.ajax({
                         url : "php/save-project.php",
                         type : "POST",
@@ -175,11 +190,13 @@
                         processData: false,
                         success : function (response) {
                             if(response.status == true) {
+                                var pro_id = response.pro_id;
+                                dropzone.options.params = { pro_id: pro_id };
+                                dropzone.processQueue();
                                 form.trigger("reset");
                                 $('.summernote').summernote('code', ''); 
                                 scs("Successfull",response.message);
                             }else{
-        
                                 err("Error!",response.message);
                             }
                         }
@@ -197,7 +214,7 @@
 
                 $('#sub_category').find('option').not(':first').remove();
                 $.each(response,function(key, item){
-                    $('#sub_category').append(`<option value="${item.category_id}">${item.name}</option>`);
+                    $('#sub_category').append(`<option value="${item.id}">${item.name}</option>`);
                 });
             }
             ,error:function(jqXHR, exception) {

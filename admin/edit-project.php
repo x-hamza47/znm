@@ -41,12 +41,13 @@
                     <?php
                     	if (isset($_GET['proId'])) {
                             $usr_id = htmlspecialchars($_GET['proId']);
+                            require_once "../admin/php/crud.php";
                             $db = new Database();
-                            $sql = "SELECT * FROM projects WHERE id = ?";
+                            $sql = "SELECT project_id,project_name,project_desc,category,sub_category,location,status FROM projects WHERE project_id = ?";
                             $query= $db->prepare($sql);
-                            $query->bind_param('i',$usr_id);
+                            $query->bind_param('s',$usr_id);
                             if($query->execute()) {
-                                $query->bind_result($id, $img, $title, $desc, $status);
+                                $query->bind_result($id, $title, $desc, $cid, $sid, $location, $status);
 								$query->fetch();
                                 $query->close();
                     ?>
@@ -83,14 +84,20 @@
                                     </div>	 
                                                                                                        
                                 </div>
-                                <div class="row" id="product-gallery">
+                                <!-- <div class="row" id="product-gallery">
                                     <div class="col-md-3"> 
                                         <div class="card" id='image-div'>
                                             <input type="hidden" name="old_img" value="<?php echo $img; ?>">
-                                            <img src="uploads/<?php echo $img;?>" class="card-img-top" alt="">
+                                            <img src="uploads/" class="card-img-top" alt="">
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
+                                <div class="col-md">
+                                    <div class="mb-3">
+                                        <label for="location">Location</label>
+                                        <input type="text" value="<?php echo $location; ?>" name="location" id="location" class="form-control" placeholder="e.g., Mirpurkhas, Sindh, Pakistan">	
+                                    </div>
+                                </div> 
                             </div>
                             <div class="col-md-4">
                                 <div class="card mb-3">
@@ -104,6 +111,44 @@
                                         </div>
                                     </div>
                                 </div> 
+                                <div class="card">
+                                    <div class="card-body">	
+                                        <h2 class="h4  mb-3">Project category</h2>
+                                        <div class="mb-3">
+                                            <label for="category">Category</label>
+                                            <select name="category" id="category" class="form-control">
+                                            <option selected disabled>-- Select a Category --</option>
+											<?php 
+												// $db2 = new Database();
+												$response = $db->select('categories','cid,name',null,"status = '1'",'name ASC',null,null);
+												if($response != false){
+													foreach ($response as $category) {
+														echo "<option ".(($category['cid'] == $cid) ? 'selected' : '')." value='{$category['cid']}'>{$category['name']}</option>";
+													}
+												}else{
+													echo "<option disabled>--Categories not found--</option>";
+												}
+											?>
+											</select>
+											<p></p>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="category">Sub category</label>
+                                            <select name="sub_category" id="sub_category" class="form-control">
+                                            <option selected disabled>-- Select a Sub Category --</option>
+                                            <?php 
+												// $db2 = new Database();
+												$response2 = $db->select('sub_categories','id,name',null,"category_id = '{$cid}' AND status = '1'",'name ASC',null,null);
+												if($response2 != false){
+													foreach ($response2 as $subcategory) {
+														echo "<option ".(($subcategory['id'] == $sid) ? 'selected' : '')." value='{$subcategory['id']}'>{$subcategory['name']}</option>";
+													}
+												}
+											?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
                                    
                             </div>
                         </div>
@@ -163,5 +208,28 @@
                     });
                 });
             });
+
+            
+    $('#category').change(function(){
+    let category_id = $(this).val();
+    $.ajax({
+            url : "./php/project-sub-category.php",
+            type : 'GET',
+            data : { category_id: category_id},
+            dataType : 'json',
+            success: function(response){
+
+                $('#sub_category').find('option').not(':first').remove();
+                $.each(response,function(key, item){
+                    console.log(item.id);
+                    $('#sub_category').append(`<option value="${item.id}">${item.name}</option>`);
+                });
+            }
+            ,error:function(jqXHR, exception) {
+            console.error("Something went wrong");
+            }
+    });
+    });
+
             
         </script>
