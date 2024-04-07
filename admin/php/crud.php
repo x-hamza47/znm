@@ -254,7 +254,7 @@ class Database{
         }
     }
 
-    public function select($table,$row = "*", $join = null, $where = null, $order = null, $limit = null,$page = null) {
+    public function select($table,$row = "*", $join = null, $where = null, $order = null, $limit = null,$page = null,$group = null) {
         if ($this->tableExists($table)) {
             $sql = "SELECT $row FROM $table";
                     if ($join != null) {
@@ -263,6 +263,10 @@ class Database{
                     if ($where != null) {
                         $sql .= " WHERE $where";
                     }
+                    if ($group != null) {
+                        $sql .= " GROUP BY $group";
+                    }
+            
                     if ($order != null) {
                         $sql .= " ORDER BY $order";
                     }

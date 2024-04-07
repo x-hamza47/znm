@@ -43,12 +43,16 @@
                             $usr_id = htmlspecialchars($_GET['proId']);
                             require_once "../admin/php/crud.php";
                             $db = new Database();
-                            $sql = "SELECT project_id,project_name,project_desc,category,sub_category,location,status FROM projects WHERE project_id = ?";
+                            $sql = "SELECT projects.project_id,projects.project_name,projects.project_desc,projects.category,projects.sub_category,location,status,project_images.project_image FROM projects LEFT JOIN project_images
+                            ON projects.project_id = project_images.pid WHERE project_id = ?";
                             $query= $db->prepare($sql);
                             $query->bind_param('s',$usr_id);
                             if($query->execute()) {
-                                $query->bind_result($id, $title, $desc, $cid, $sid, $location, $status);
-								$query->fetch();
+                                $query->bind_result($id, $title, $desc, $cid, $sid, $location, $status,$img);
+                                $imgs = array();
+                                while ($query->fetch()) {
+                                    $imgs[] = $img;
+                                }
                                 $query->close();
                     ?>
 					<form class="container-fluid " method="POST"  enctype="multipart/form-data" id="form">
@@ -73,25 +77,41 @@
                                                 </div>
                                             </div>                                            
                                         </div>
-                                    </div>	                                                                      
+                                    </div>	                                                                       
                                 </div>
                                 <div class="card mb-3">
                                     <div class="card-body">
-                                        <h2 class="h4 mb-3">Media</h2>								
-                                        <div class="input-group">
-                                            <input type="file" class="form-control" id="inputGroupFile04"  name="fileUpload">
+                                         <h2 class="h4 mb-3">Media</h2>								
+                                        <div id="image" class="dropzone dz-clickable">
+                                            <div class="dz-message needsclick">    
+                                             <br>Drop files here or click to upload.<br><br>                                            
+                                            </div>
                                         </div>
                                     </div>	 
                                                                                                        
                                 </div>
-                                <!-- <div class="row" id="product-gallery">
+                                <div class="row" id="product-gallery">
+                                    <?php
+                                    if(!empty($imgs)) {
+                                    foreach ($imgs as $img) {
+                                    ?>
                                     <div class="col-md-3"> 
                                         <div class="card" id='image-div'>
-                                            <input type="hidden" name="old_img" value="<?php echo $img; ?>">
-                                            <img src="uploads/" class="card-img-top" alt="">
+                                            <input type="hidden" name="old_img[]" value="<?php echo $img; ?>">
+                                            <img src="uploads/<?php echo $img; ?>" class="card-img-top" alt="">
+                                            <div class="card-body">
+                                                <a href="javascript:void(0)" class="btn btn-danger" >Delete</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div> -->
+                                    <?php       
+                                    }
+                                    
+                                }else{
+                                        
+                                }
+                              ?>
+                                </div>
                                 <div class="col-md">
                                     <div class="mb-3">
                                         <label for="location">Location</label>
@@ -175,13 +195,41 @@
         <?php  require_once "./footer.php" ; ?>
  
        <script type="module">
+           import {scs,closeIcon,err,clears}  from "./js/modules2.js";
+           var dropzone;
+        Dropzone.autoDiscover = false;    
             $(function () {
                 // Summernote
                 $('.summernote').summernote({
                     height: '300px'
                 });
+                dropzone = new Dropzone('#image',{ 
+                    url: "php/save-project-img.php",
+                    maxFiles: 4,
+                    uploadMultiple: true,
+                    parallelUploads : 4,
+                    addRemoveLinks: true,
+                    acceptedFiles: "image/jpeg,image/png,image/jpg",
+                    autoProcessQueue: false,
+                    success: function(file, response) {
+                        if(response.status == true) {
+                            setTimeout(() => {
+                                scs("Successfull",response.message);
+                            },5500);
+                        }else{
+                            setTimeout(() => {
+                                err("Error!",response.message);
+                            },5500);
+                        }
+                        
+                    },
+                        complete:function(file){
+                           setTimeout(() => {
+                            this.removeFile(file);
+                           },2000) ;
+                        }
+                });
             });
-            import {scs,closeIcon,err,clears}  from "./js/modules2.js";
 
             var form = $("#form");
             $("input[type='submit']").on("click",function(e){

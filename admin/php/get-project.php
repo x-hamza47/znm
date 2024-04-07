@@ -1,18 +1,21 @@
 <?php
 require_once "crud.php";
 
-// <td>".(file_exists("../uploads/".$data['project_image']) ?'<img src="uploads/'.$data['project_image'].'" class="img-thumbnail">':  '<img src="uploads/default-150x150.png" class="img-thumbnail">'). "</td>
+
 $limit = 10;
 $page = (isset($_POST['page'])) ? htmlspecialchars($_POST['page']) : 1;
 $db = new Database();
 $output = "";
-$select = "projects.project_id,projects.project_name,projects.project_desc,projects.location,projects.status,categories.name AS c_name,sub_categories.name AS s_name";
-$join = "LEFt JOIN categories ON projects.category = categories.cid LEFT JOIN sub_categories ON projects.sub_category = sub_categories.id";
-$response = $db->select("projects",$select,$join,null,"projects.id DESC",$limit,$page);
-
+$select = "projects.project_id,projects.project_name,projects.project_desc,projects.location,projects.status,categories.name AS c_name,sub_categories.name AS s_name,
+(SELECT project_image FROM project_images WHERE project_images.pid = projects.project_id LIMIT 1) AS image";
+$join = "LEFT JOIN categories ON projects.category = categories.cid LEFT JOIN sub_categories ON projects.sub_category = sub_categories.id LEFT JOIN project_images ON projects.project_id = project_images.pid";
+$groupBy = "projects.project_id";
+$response = $db->select("projects",$select,$join,null,"projects.id DESC",$limit,$page,$groupBy);
+// echo json_encode($response);
+// exit;
 foreach ($response as $data) {
     $output .= "<tr>
-                <td >{$data['project_id']}</td>
+                <td>".((file_exists("../uploads/".$data['image'])) ? '<img src="uploads/'.$data['image'].'"  style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">':  '<img src="./uploads/default-150x150.png" style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">'). "</td>
                 <td >{$data['project_name']}</td>
                 <td class='text-justify'>{$data['project_desc']}</td>
                 <td class='text-justify fw-bold'>{$data['c_name']}</td>

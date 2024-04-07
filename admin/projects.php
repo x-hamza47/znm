@@ -57,7 +57,7 @@
 									<thead class="table-dark ">
 										<tr>
 											<!-- <th width="60">ID</th> -->
-											<th width="50">Thumbnail</th>
+											<th width="150">Thumbnail</th>
 											<th>Project</th>
 											<th width="200">Work Scope</th>
 											<th>Category</th>
