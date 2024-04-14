@@ -43,14 +43,15 @@
                             $usr_id = htmlspecialchars($_GET['proId']);
                             require_once "../admin/php/crud.php";
                             $db = new Database();
-                            $sql = "SELECT projects.project_id,projects.project_name,projects.project_desc,projects.category,projects.sub_category,location,status,project_images.project_image FROM projects LEFT JOIN project_images
+                            $sql = "SELECT projects.project_id,projects.project_name,projects.project_desc,projects.category,projects.sub_category,location,status,project_images.id,project_images.project_image FROM projects LEFT JOIN project_images
                             ON projects.project_id = project_images.pid WHERE project_id = ?";
                             $query= $db->prepare($sql);
                             $query->bind_param('s',$usr_id);
                             if($query->execute()) {
-                                $query->bind_result($id, $title, $desc, $cid, $sid, $location, $status,$img);
+                                $query->bind_result($id, $title, $desc, $cid, $sid, $location, $status,$img_id,$img);
                                 $imgs = array();
                                 while ($query->fetch()) {
+                                    $imgId[] = $img_id;
                                     $imgs[] = $img;
                                 }
                                 $query->close();
@@ -62,12 +63,13 @@
                                     <div class="card-body">								
                                         <div class="row">
                                         <div class="form-group">
-                                            <input type="hidden" name="pro_id"  class="form-control" value="<?php echo $id; ?>">
+                                            <input type="hidden" id="p_id" name="pro_id"  class="form-control" value="<?php echo $id; ?>">
                                         </div>
                                             <div class="col-md-12">
                                                 <div class="mb-3">
                                                     <label for="title">Title</label>
                                                     <input type="text" name="title" id="title" value="<?php echo $title; ?>" class="form-control" placeholder="Title">	
+                                                    <p></p>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -93,29 +95,26 @@
                                 <div class="row" id="product-gallery">
                                     <?php
                                     if(!empty($imgs)) {
-                                    foreach ($imgs as $img) {
-                                    ?>
-                                    <div class="col-md-3"> 
-                                        <div class="card" id='image-div'>
-                                            <input type="hidden" name="old_img[]" value="<?php echo $img; ?>">
-                                            <img src="uploads/<?php echo $img; ?>" class="card-img-top" alt="">
-                                            <div class="card-body">
-                                                <a href="javascript:void(0)" class="btn btn-danger" >Delete</a>
+                                    foreach ($imgs as $key => $img) {
+                                        echo "<div class='col-md-3' id='img-row-" . $imgId[$key] . "'> 
+                                        <div class='card' id='image-div'>
+                                            <input type='hidden' name='old_img[]' value='" . $img . "'>
+                                            <img src='uploads/" . $img . "' class='card-img-top' alt=''>
+                                            <div class='card-body'>
+                                                <a href='javascript:void(0)' data-img-row='" . $imgId[$key] . "' class='btn btn-danger'>Delete</a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <?php       
-                                    }
-                                    
-                                }else{
-                                        
+                                        </div>";
+                                    }   
                                 }
-                              ?>
+                                ?>
+                              
                                 </div>
                                 <div class="col-md">
                                     <div class="mb-3">
                                         <label for="location">Location</label>
                                         <input type="text" value="<?php echo $location; ?>" name="location" id="location" class="form-control" placeholder="e.g., Mirpurkhas, Sindh, Pakistan">	
+                                        <p></p>
                                     </div>
                                 </div> 
                             </div>
@@ -166,6 +165,7 @@
 												}
 											?>
                                             </select>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +196,7 @@
  
        <script type="module">
            import {scs,closeIcon,err,clears}  from "./js/modules2.js";
-           var dropzone;
+        var dropzone;
         Dropzone.autoDiscover = false;    
             $(function () {
                 // Summernote
@@ -204,7 +204,7 @@
                     height: '300px'
                 });
                 dropzone = new Dropzone('#image',{ 
-                    url: "php/save-project-img.php",
+                    url: "php/update-project-img.php",
                     maxFiles: 4,
                     uploadMultiple: true,
                     parallelUploads : 4,
@@ -234,28 +234,58 @@
             var form = $("#form");
             $("input[type='submit']").on("click",function(e){
                 e.preventDefault();
-                const formData = new FormData(form[0]);
-                $("#update").click(function(){
-                    $('#update-project').modal('hide');
-                    $.ajax({
-                        url : "php/update-project.php",
-                        type : "POST",
-                        data : formData,
-                        dataType:'json',
-                        contentType: false, 
-                        processData: false,
-                        success : function (response) {
-                            if(response.status == true) {
-                                form.trigger("reset");
-                                scs("Successfull",response.message);
-                            }else{
-                                err("Error!",response.message);
-                            }
-    
-                        }
-                    });
-                });
             });
+            $("#update").click(function(){
+                $('#update-project').modal('hide');
+                let name = $("#title").val();;
+                let location = $("#location").val();
+
+
+                if(name != ""){
+                    $('#title').removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback').html("");
+
+                    if(location != ""){
+                        $('#description').removeClass('is-invalid')
+					    .siblings('p')
+					    .removeClass('invalid-feedback').html("");
+
+                                const formData = new FormData(form[0]);
+                                $.ajax({
+                                    url : "./php/update-project.php",
+                                    type : "POST",
+                                    data : formData,
+                                    dataType:'json',
+                                    contentType: false, 
+                                    processData: false,
+                                    success : function (response) {
+                                        console.log(response);
+                                        if(response.status == true) {
+                                            // form.trigger("reset");
+                                         var pro_id = $("#p_id").val();
+                                        dropzone.options.params = { pro_id: pro_id };
+                                        dropzone.processQueue();
+                                            scs("Successfull",response.message);
+                                        }else{
+                                            err("Error!",response.message);
+                                        }
+                                    }
+                                });
+   
+                    }else{
+                        $('#location').addClass('is-invalid')
+					    .siblings('p')
+					    .addClass('invalid-feedback').html("The location field is required");
+                    }
+
+                }else{
+                    $('#title').addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html("The title field is required");
+                }
+
+                });
 
             
     $('#category').change(function(){
@@ -279,5 +309,30 @@
     });
     });
 
+$("#image-div .card-body a").click(function(){
+    let img_id = $(this).data("img-row");
+    let img = $('#img-row-' + img_id + ' input[name="old_img[]"]').val();
+    clears();
+    if (img_id != "") {
+    $.ajax({
+    type: "POST",
+    url: "./php/delete-img.php",
+    data: {img_id : img_id,img_name : img},
+    dataType: "json",
+    success: function (response) {
+        if(response.status === true){
+            $('#img-row-' + img_id).fadeOut(400, function() {
+                $(this).remove();
+            });
+        }else{
+            alert("ERROR");
+        }
+    }
+    });
+    } else {
+    res.err("Error","Project not found!");
+    }
+   
+});
             
         </script>

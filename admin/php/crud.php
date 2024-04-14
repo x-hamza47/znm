@@ -94,13 +94,12 @@ class Database{
         }
     }
 
-    public function destroy($table,int $user) {
+    public function destroy($table, $user,$col) {
         if($this->tableExists($table)) {
             if (!empty($user) || isset($user)){
-                if (filter_var($user,FILTER_VALIDATE_INT)) {
-                    $query = "DELETE FROM $table WHERE id = ?";
+                    $query = "DELETE FROM $table WHERE $col = ?";
                     $stmt = $this->conn->prepare($query);
-                    $stmt->bind_param("i",$user);
+                    $stmt->bind_param("s",$user);
                     if ($stmt->execute()) {
                         $result = array(
                             'status' => true,
@@ -114,14 +113,6 @@ class Database{
                         );
                         return $result;
                     }
-
-                }else{
-                    $result = array(
-                        'status' => false,
-                        'message' => 'Invalid item ID detected.'
-                    );
-                    return $result;
-                }
             }else{
                 $result = array(
                     'status' => false,
@@ -468,13 +459,54 @@ class Database{
             exit;
         }
     }
+    // public function updateImages($table,string $id,string $img) {
+    //     if($this->tableExists($table)) {
+    //         if(isset($id) && !empty($id) && !empty($img)) {
+    //             $p_id = $this->conn->real_escape_string($id);
+    //             $img_name = $this->conn->real_escape_string($img);
+    //             $sql = "UPDATE project_images SET project_image = ? WHERE pid = ?";
+    //             $query = $this->conn->prepare($sql);
+    //             $query->bind_param("ss", $img_name, $p_id);
+    //             if($query->execute()) {
+    //                 $result = array(
+    //                     'status' => true,
+    //                     'message' => 'Images Uploaded Successfully.',
+    //                 );
+    //                 return $result;
+    //                 exit;
+    //             }else{
+    //                 $result = array(
+    //                     'status' => false,
+    //                     'message' => 'Images Uploading Failed.',
+    //                 );
+    //                 return $result;
+    //                 exit;
+    //             }
+                
+    //         }else{
+    //             $result = array(
+    //                 'status' => false,
+    //                 'message' => 'Please Upload and image.',
+    //             );
+    //             return $result;
+    //             exit;
+    //         }
+    //     }else{
+    //         $result = array(
+    //             'status' => false,
+    //             'message' => 'Contact your Developer!'
+    //         );
+    //         return $result;
+    //         exit;
+    //     }
+    // }
 
-    public function update($table, $id, $title, $desc, $img, $status) {
+    public function update($table, $id, $title, $desc, $cat, $sub,$location, $status) {
         if($this->tableExists($table)) {
-            $sql = "UPDATE projects SET project_image = ?, project_name = ?,project_desc = ?,status = ? 
-            WHERE id = ?";
+            $sql = "UPDATE projects SET project_name = ?,project_desc = ?,category = ?, sub_category = ?, location = ?, status = ? 
+            WHERE project_id = ?";
             $query = $this->conn->prepare($sql);
-            $query->bind_param("ssssi",$img,$title,$desc,$status,$id);
+            $query->bind_param("sssssss",$title,$desc,$cat,$sub,$location,$status,$id);
             if ($query->execute()){
                 $result = array(
                     'status' => true,

@@ -3,7 +3,7 @@
     --secondary-color : #535a60;
     --accent-color : #fff;
 }
-.projects-head,.project-head {
+.interior-head,.projects-head,.project-head {
     width: 100%;
     height: 100vh;
     background-attachment: fixed;
@@ -14,6 +14,9 @@
 }
 .project-head{
     background: url('../images/background-7.png') no-repeat;
+}
+.interior-head{
+    background: #1E1E1E url('../images/background-9-edit.jpg') no-repeat;
 }
 .heading h1{
     font-size: clamp(14px,1.8vw,145px);
@@ -26,7 +29,7 @@
     font-size: clamp(20px,4vw,145px);
     /* color: var(--accent-color); */
 }
-:is(.project-head,.projects-head) :is(h1,h2){
+:is(.interior-head,.project-head,.projects-head) :is(h1,h2){
     transform: translateY(60px);
     filter: blur(20px);
     opacity: 0;

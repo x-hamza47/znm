@@ -47,6 +47,7 @@
                                                 <div class="mb-3">
                                                     <label for="title">Title</label>
                                                     <input type="text" name="title" id="title" class="form-control" placeholder="Title">	
+                                                    <p></p>
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
@@ -69,6 +70,7 @@
                                                 <div class="mb-3">
                                                     <label for="location">Location</label>
                                                     <input type="text" name="location" id="location" class="form-control" placeholder="e.g., Mirpurkhas, Sindh, Pakistan">	
+                                                    <p></p>
                                                 </div>
                                             </div>                                         
                                         </div>
@@ -107,13 +109,14 @@
 												}
 											?>
 											</select>
-											<p></p>
+											
                                         </div>
                                         <div class="mb-3">
                                             <label for="category">Sub category</label>
                                             <select name="sub_category" id="sub_category" class="form-control">
                                             <option selected disabled>-- Select a Sub Category --</option>
                                             </select>
+                                     
                                         </div>
                                     </div>
                                 </div>
@@ -172,38 +175,62 @@
                 });
             });
             
-            
-            
+
             var form = $("#form");
             $("input[type='submit']").on("click",function(e){
                 e.preventDefault();
             });
             $("#upload").click(function(){
                 $('#upload-project').modal('hide');
-                const formData = new FormData(form[0]);
-                    $.ajax({
-                        url : "php/save-project.php",
-                        type : "POST",
-                        data : formData,
-                        dataType:'json',
-                        contentType: false, 
-                        processData: false,
-                        success : function (response) {
-                            if(response.status == true) {
-                                var pro_id = response.pro_id;
-                                dropzone.options.params = { pro_id: pro_id };
-                                dropzone.processQueue();
-                                form.trigger("reset");
-                                $('.summernote').summernote('code', ''); 
-                                scs("Successfull",response.message);
-                            }else{
-                                err("Error!",response.message);
-                            }
-                        }
-                    });
-                });
+                let name = $("#title").val();
+                let location = $("#location").val();
+                if(name != ""){
+                    $('#title').removeClass('is-invalid')
+					.siblings('p')
+					.removeClass('invalid-feedback').html("");
 
-    $('#category').change(function(){
+                    if(location != ""){
+                        $('#location').removeClass('is-invalid')
+					    .siblings('p')
+					    .removeClass('invalid-feedback').html("");
+
+                                const formData = new FormData(form[0]);
+                                $.ajax({
+                                url : "php/save-project.php",
+                                type : "POST",
+                                data : formData,
+                                dataType:'json',
+                                contentType: false, 
+                                processData: false,
+                                success : function (response) {
+                                    if(response.status == true) {
+                                        var pro_id = response.pro_id;
+                                        dropzone.options.params = { pro_id: pro_id };
+                                        dropzone.processQueue();
+                                        form.trigger("reset");
+                                        $('.summernote').summernote('code', ''); 
+                                        scs("Successfull",response.message);
+                                    }else{
+                                        err("Error!",response.message);
+                                    }
+                                }
+                            });
+        
+                    }else{
+                        $('#location').addClass('is-invalid')
+					    .siblings('p')
+					    .addClass('invalid-feedback').html("The location field is required");
+                    }
+
+                }else{
+                    $('#title').addClass('is-invalid')
+					.siblings('p')
+					.addClass('invalid-feedback').html("The title field is required");
+                }
+            });
+            
+          
+            $('#category').change(function(){
     let category_id = $(this).val();
     $.ajax({
             url : "./php/project-sub-category.php",

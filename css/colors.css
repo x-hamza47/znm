@@ -27,7 +27,7 @@ form .sub-btn button,.footer-links,
 :is(.quick-links,.social-links) h5,.copyright-text,
 #lt-sec .lt-head > h1,#lt-sec .lt-sub-head > h2,
 #lt-sec .lt-btn,#lt-sec .lt-btn a,
-:is(.projects-head,.project-head) .heading :is(h1,h2),
+:is(.interior-head,.projects-head,.project-head) .heading :is(h1,h2),
 .projects .project-bx .project-layer,
 .service-head :is(h1,h2){
     color: var(--accent-color);
@@ -84,7 +84,7 @@ li::marker,
 .social-links a,.accordion-body details summary{
     color: var(--secondary-color);
 }
-:is(.about-us,.abt-service,.clients-container,.visits),
+:is(.abt-service,.clients-container,.visits),
 .contact_section .contact-container .form_container,
 textarea,textarea:focus + label,.inp_grp :is(input,i),
 :is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label,

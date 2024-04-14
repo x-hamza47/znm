@@ -147,6 +147,7 @@ proId = encodeURIComponent(proId);
 var ele =this;
 clears();
 $("#delete").click(function() {
+	$('#deleteDrop').modal('hide');
 if (proId != "") {
 $.ajax({
    type: "POST",
@@ -156,14 +157,12 @@ $.ajax({
    success: function (response) {
 	  if(response.status == true) {
 		 // Close the modal
-		$('#deleteDrop').modal('hide');
 		scs("Successfull",response.message);
 		$(ele).closest("tr").fadeOut(400,function() {
-			$(ele).closest("tr").remove();
-			loadTable();pagination();
+		$(ele).closest("tr").remove();
+		loadTable();pagination();
 		});
 	  }else{
-		$('#deleteDrop').modal('hide');
 		 err("Error",response.message);
 	  }
    }

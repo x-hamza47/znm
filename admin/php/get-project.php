@@ -11,8 +11,7 @@ $select = "projects.project_id,projects.project_name,projects.project_desc,proje
 $join = "LEFT JOIN categories ON projects.category = categories.cid LEFT JOIN sub_categories ON projects.sub_category = sub_categories.id LEFT JOIN project_images ON projects.project_id = project_images.pid";
 $groupBy = "projects.project_id";
 $response = $db->select("projects",$select,$join,null,"projects.id DESC",$limit,$page,$groupBy);
-// echo json_encode($response);
-// exit;
+
 foreach ($response as $data) {
     $output .= "<tr>
                 <td>".((file_exists("../uploads/".$data['image'])) ? '<img src="uploads/'.$data['image'].'"  style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">':  '<img src="./uploads/default-150x150.png" style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">'). "</td>

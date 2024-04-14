@@ -43,8 +43,8 @@
                 <li><a href="index.php#about-us">About Us</a></li>
                 <li><a href="index.php#service" class="active">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
-                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="projects.php">Projects</a></li>
+                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
               </ul>
 
@@ -71,15 +71,23 @@
             <div class="imgs">
               <div class="img" style="left: 0;background:url('./images/petroleum-3.jpg');"> 
                 <div class="content">
-                    <h2 class="current-img">Dummy Text</h2>
-                    <a href="service.php" class="current-img"><button>See more!</button></a>
+                    <h2 class="current-img">Consultancy and Licensing Services for Dangerous Chemicals and Petroleum Products in Pakistan</h2>
+                    <a href="#abt-license" class="current-img"><button>See more!</button></a>
                 </div>
               </div>
 
               <div class="img" style="background:url('./images/petroluem-2.webp');">
                 <div class="content">
-                    <h2>Dummy Text</h2>
-                  <a href="service.php"><button>See more!</button></a>
+                    <h2>Dangerous Petroleum License [DPL]</h2>
+                  <a href="#license-service"><button>See more!</button></a>
+                </div>
+              </div>
+
+
+              <div class="img">
+                <div class="content">
+                    <h2>Category</h2>
+                  <a href="#dpl"><button>See more!</button></a>
                 </div>
               </div>
 
@@ -89,16 +97,8 @@
                     <h2>Dummy Text</h2>
                   <a href="service.php"><button>See more!</button></a>
                 </div>
-              </div>
-
-
-              <div class="img">
-                <div class="content">
-                    <h2>Dummy Text</h2>
-                  <a href="service.php"><button>See more!</button></a>
-                </div>
-              </div>
-              <div class="img">
+              </div> -->
+              <!-- <div class="img">
                 <div class="content">
                     <h2>Dummy Textt</h2>
                   <a href="service.php"><button>See more!</button></a>
@@ -188,8 +188,8 @@ ZNM is a leading private consulting company that specializes in providing servic
   </section>
   <!-- Service End -->
 
-  <section class="abt-service">
-  <div class="container">
+  <section class="abt-service" id='abt-license'>
+  <div class="container-fluid ">
         
         <div class="content">
           <div class="info-img img2"></div>
@@ -204,13 +204,122 @@ ZNM is a leading private consulting company that specializes in providing servic
   
         </div>
   
-          <div class="content">
+          <div class="content" id='license-service'>
             <div class="info-text txt1">
               
-            <h3>License Servives</h3>
-            
+            <h3>License Services</h3>
+            <p>At M/s. Excellent Services, we provide consultancy services for the storage of Dangerous Chemicals, Petroleum Products, and Chemicals. We understand that obtaining a license for the storage of these materials can be a complicated and lengthy process. Therefore, we assist our clients in obtaining all the necessary NOCs from different departments like D.C.O, T.M.O, Civil Defence, Anti-Narcotic Force, Environment and Protection Agency, DIG, etc., as well as proposing a plan for the storage of chemicals.</p>
+            <p>We also assist in obtaining the required forms for various types of licenses:</p>
             </div>
             <div class="info-img img1"></div>
+  
+          </div>
+
+          <div class="content">
+            <table class="table table-bordered align-middle" id='forms-list'>
+              <thead>
+                <tr class="text-center align-middle ">
+                  <th scope="col">Form of License</th>
+                  <th scope="col">Purpose of Grant</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr>
+                  <th scope="row">Form “K”</th>
+                  <td>For Petrol Pumps for Storage of Petrol, Diesel & Lube Oil</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “L”</th>
+                  <td>For Individuals and Oil Companies for Storage of Petroleum Products and Chemicals in bulk storage above-ground or in underground tanks.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “M”</th>
+                  <td>For Individuals and Oil Companies for Storage of Petroleum Products and Chemicals in non-bulk storage in storage godowns.</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “B-1”</th>
+                  <td>For CNG Stations</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “N”</th>
+                  <td>For LPG Stations</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “O”</th>
+                  <td>For LPG to fill Cylinders</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “Q”</th>
+                  <td>For Transportation of Petroleum Products by land/road</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “C”</th>
+                  <td>For Import and Storage of Carbide of Calcium</td>
+                </tr>
+                <tr>
+                  <th scope="row">Form “Spl”</th>
+                  <td>For storage and sale of petroleum products by ship/barge.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="content" id='dpl'>
+            <div class="info-img img3"></div>
+            <div class="info-text txt3">
+              
+              <h3>Dangerous Petroleum License [DPL]</h3>
+              <ol class='dpl-license'>
+              <li>ACETONE</li>
+              <li>AERYONITHRIL</li>
+              <li>ALUMINIUM POWDER</li>
+              <li>AMMONIUM NITRATE</li>
+              <li>ANTIMONY SULPHIDE</li>
+              <li>ARSENIC SULPHIDES</li>
+              <li>BENZENE</li>
+              <li>BENZOL</li>
+              <li>BUTANE (N.Butyl)</li>
+              <li>BENZENE NAPTIIAL</li>
+              <li>CHARCOAL</li>
+              <li>COTTON WOOL</li>
+              <li>CALCIUM CARBIDE</li>
+              <li>COAL TAR NAPHTHA</li>
+              <li>DIACETONE ALCOHOL</li>
+              <li>DECAHYDRO NAPHTHALAMIN</li>
+              <li>ETHYL ALCOHOL</li>
+              <li>GLYCERINE</li>
+              <li>ISO-OCTANE</li>
+              <li>METHYL ALCOHOL</li>
+              <li>METHANOL</li>
+              <li>METHYL METHACRYLATE MONOMER</li>
+              <li>MERCURY</li>
+              <li>NITRIC ACID</li>
+              <li>POTASSIUM NITRATE</li>
+              <li>POTASSIUM CHLORIDE</li>
+              <li>PRINTING INK</li>
+              <li>PHOSPHOROUS</li>
+              <li>PETROLEUM ETHER</li>
+              <li>PATROLLING</li>
+              <li>PETROL SPIRIT</li>
+              <li>CITRIC ACID</li>
+              <li>CTLFIF SPIRIT</li>
+              <li>SOLVENT NAPHTHA LIGHT</li>
+              <li>SOLVENT NAPHTHA HEAVY</li>
+              <li>SODIUM NITRATE</li>
+              <li>SULPHUR</li>
+              <li>SULPHURIC ACID</li>
+              <li>TOLUOL</li>
+              <li>THINNER</li>
+              <li>TOLUENE</li>
+              <li>VINYL ACETATE</li>
+              <li>WOOD NAPHTHA</li>
+              <li>WHITE SPIRIT</li>
+              <li>XYLENE META</li>
+              <li>XYLOLS</li>
+              <li>METHYL ETHYL KETONE (BUTANONE)</li>
+              <li>ISOPROPYL ALCOHOL (IPA)</li>
+            </ol>
+            </div>
   
           </div>
   

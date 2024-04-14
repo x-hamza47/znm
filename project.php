@@ -39,8 +39,8 @@
                 <li><a href="index.php#about-us">About Us</a></li>
                 <li><a href="index.php#service">Services</a></li>
                 <li><a href="index.php#service">Design Gallery</a></li>
-                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="index.php#projects" class="active">Projects</a></li>
+                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
               </ul>
             <button class="nav__toggle-btn"><i class='bx bx-menu'></i></button> 

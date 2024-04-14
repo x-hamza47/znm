@@ -42,8 +42,8 @@
                 <li><a href="index.php#about-us">About Us</a></li>
                 <li><a href="index.php#service">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
+                <li><a href="index.php#projects" class="active">Projects</a></li>
                 <li><a href="index.php#clients">Clients</a></li>
-                <li><a href="index.php#projects"  class="active">Projects</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
               </ul>
 

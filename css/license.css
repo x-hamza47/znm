@@ -1,3 +1,13 @@
+:root{
+    --primary-color : #f07b26;
+    --secondary-color : #535a60;
+    --dark-black :#212121;
+    --dark-black-2:#1E1E1E;
+    --accent-color : #fff;
+    --glass-primary:rgba(239, 120, 60, 0.1);
+    --glass-sec:rgba(83,90,96,.2);
+}
+
 .abt-service .img1{
     background: url('../images/industrail-2.webp') no-repeat;
     background-position:right center;
@@ -5,4 +15,33 @@
 
 .abt-service .img2{
     background: url('../images/industrail.webp') no-repeat;
+}
+.abt-service .img3{
+    background: url('../images/petroleum-4.avif') no-repeat;
+    background-position:-200px 0;
+}
+
+.abt-service .content table{
+    border-color: var(--primary-color);
+    color: var(--accent-color);
+
+    thead tr th{
+        background-color: var(--glass-primary);
+    }
+}
+.content{
+    scroll-snap-align: center;
+}
+
+.dpl-license{
+   width: 100%;
+   column-width: 150px;
+   column-gap: 25px;
+   column-rule: 2px dashed #f07b26;
+   line-height: 2;
+   padding: 0;
+   font-size: clamp(14px,1vw,57px);
+   li{
+    list-style-position: inside;
+   }
 }

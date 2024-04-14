@@ -37,8 +37,8 @@
                 <li><a href="index.php#about-us">About Us</a></li>
                 <li><a href="index.php#service">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
-                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="projects.php">Projects</a></li>
+                <li><a href="index.php#clients">Clients</a></li>
                 <li><a href="index.php#contact">Contact</a></li>
               </ul>
 
@@ -63,17 +63,18 @@
 
         <div class="slider">
             <div class="imgs">
-              <div class="img" style="left: 0;"> 
+              
+              <div class="img" style="left: 0;">
                 <div class="content">
-                    <h2 class="current-img">Design Consultant</h2>
-                    <a href="service.php" class="current-img"><button>See more!</button></a>
+                  <h2 class="current-img">Explosive License Service</h2>
+                  <a href="service.php" class="current-img"><button>See more!</button></a>
                 </div>
               </div>
 
-              <div class="img">
+              <div class="img"> 
                 <div class="content">
-                    <h2>Explosive License Service</h2>
-                  <a href="service.php"><button>See more!</button></a>
+                    <h2>Design Consultant</h2>
+                    <a href="service.php"><button>See more!</button></a>
                 </div>
               </div>
 
