@@ -317,7 +317,23 @@
   p{
     font-size: clamp(14px,1.2vw,57px);
     color: #fff;
-    margin: 3px 0;
+    line-height: 1.7;
+    margin: 6px 0 12px 0;
+  }
+  #cat{
+    font-size: clamp(14px,1.2vw,57px);
+    color: #fff;
+    span{
+      color: var(--primary-color);
+    }
+  }
+  address{
+    font-size: clamp(14px,1.2vw,57px);
+    color: #fff;
+    
+    span{
+    color: var(--primary-color);
+    }
   }
 }
 

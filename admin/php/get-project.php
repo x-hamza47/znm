@@ -16,7 +16,7 @@ foreach ($response as $data) {
     $output .= "<tr>
                 <td>".((file_exists("../uploads/".$data['image'])) ? '<img src="uploads/'.$data['image'].'"  style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">':  '<img src="./uploads/default-150x150.png" style="max-width:150px;aspect-ratio:16/9;" class="img-thumbnail img-fluid ">'). "</td>
                 <td >{$data['project_name']}</td>
-                <td class='text-justify'>{$data['project_desc']}</td>
+                <td class='text-justify'>".substr($data['project_desc'],0,40).'... ' ."</td>
                 <td class='text-justify fw-bold'>{$data['c_name']}</td>
                 <td class='text-justify fw-bold'>{$data['s_name']}</td>
                 <td class='text-justify'>{$data['location']}</td>
