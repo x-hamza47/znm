@@ -155,7 +155,7 @@
                 width:max-content;
                 color: var(--primary-color);
             }
-            p{
+            .desc{
                 font-size:clamp(14px,1.1vw,40px);
                 padding: 10px;
                 width: 95%;

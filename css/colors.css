@@ -12,7 +12,7 @@ html::-webkit-scrollbar,
 html::-webkit-scrollbar-track,.accordion-body::-webkit-scrollbar-track{
     background-color: var(--secondary-color) !important;
 }
-.header .arr-dwn,.header .nav,
+.header .arr-dwn,.header, .nav,
 .srv-container .cards .drawing-detail:hover {
     background-color: var(--glass-primary);
     color: var(--accent-color);

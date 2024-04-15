@@ -72,102 +72,6 @@
 <section class="projects" id="projects">
 
     <main class="projects-container container-fluid">
-        <!-- part 1 -->
-        <div class="project-bx">
-            <img src='./images/2d-plan.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur </p>
-            </div>
-        </div>
-        
-        <div class="project-bx">
-            <img src='./images/event-1.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/background-7.png' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/3d-e1.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-        <!-- part 2 -->
-        <div class="project-bx">
-            <img src='./images/background-6.png' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur </p>
-            </div>
-        </div>
-        
-        <div class="project-bx">
-            <img src='./images/building-2.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/cartoon-house-2-edit.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/construction-3-edit.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-        <!-- part-3 -->
-        <div class="project-bx">
-            <img src='./images/background-shell.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur </p>
-            </div>
-        </div>
-        
-        <div class="project-bx">
-            <img src='./images/exterior-2.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/interior3.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
-
-        <div class="project-bx">
-            <img src='./images/web-background-d.jpg' >
-            <div class="project-layer">
-                <h4>Web Design</h4>
-                <p>Lorem ipsum dolor sit amet consectetur</p>
-            </div>
-        </div>
 
     </main>
 
@@ -178,4 +82,27 @@
 <?php require_once "./pages/footer.php"; ?>
   
   <script type="module" src="js/service.js"></script>
-  </html>
+
+  <script type="module">
+import {success,closeIcon,err,clears}  from "./js/modules.js";
+	// loadTable
+
+function loadTable () {
+$.ajax({
+   type: "POST",
+   url: "./php/fetch-projects.php",
+//    data: {page : page},
+   success: function (response) {
+	  $(".projects-container").html(response);
+},
+error: function(xhr, status, error) {
+   console.log('Error retrieving pagination data:', error);
+}});
+}//end
+loadTable();//calling on load
+$(document).on('click', '.project-bx', function() {
+var proId = $(this).data('pro-id');
+window.location.href = `project.php?proId=${proId}`;
+});
+  </script>
+</html>

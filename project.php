@@ -59,40 +59,74 @@
     <section class="project-head d-flex justify-content-center align-items-center " id="project-head">
     <div class="heading">
         <h1>Project</h1>
-        <h2>Company Name</h2>
+        <h2></h2>
     </div>
 </section>
 
 <section class="project" id="project"> 
+    				<!-- Default box -->
+                    <?php
+                    	if (isset($_GET['proId'])) {
+                            $usr_id = htmlspecialchars($_GET['proId']);
+                            require_once "./php/config.php";
+                            $db = new dataSend();
+                            $sql = "SELECT projects.project_name, projects.project_desc, projects.location, 
+                            project_images.project_image,
+                            categories.name AS c_name, sub_categories.name AS s_name 
+                    FROM projects 
+                    LEFT JOIN categories ON projects.category = categories.cid 
+                    LEFT JOIN sub_categories ON projects.sub_category = sub_categories.id 
+                    LEFT JOIN project_images ON projects.project_id = project_images.pid 
+                    WHERE project_id = ? 
+                    ORDER BY project_images.pid ASC 
+                    LIMIT 4";
+                            $query= $db->prepare($sql);
+                            $query->bind_param('s',$usr_id);
+                            if($query->execute()) {
+                                $query->bind_result($title, $desc, $location,$img, $cid, $sid);
+                                $imgs = array();
+                                while ($query->fetch()) {
+                                    // $imgId[] = $img_id;
+                                    $imgs[] = $img;
+                                }
+                                $query->close();
+                    ?>
     <main class="project-container container-fluid d-flex justify-content-between flex-wrap">
 
         <div class="info-bx-1 container-fluid  ">
 
             <div class="desc-container">
-                <h3>Company Name</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio ad et eos dicta, possimus vel sequi consequatur autem iste cumque dolores alias saepe    modi quos voluptatem libero quod dolorum assumenda. </p>
+                <h3><?php echo $title; ?></h3>
+                <div class="desc"><?php echo $desc; ?> </div>
             </div> 
             <div class="detail-container">
-                <h4>Year</h4>
-                <span>2024</span>
-            </div> 
-            <div class="detail-container">
-                <h4>Location</h4>
-                <span>Karachi,Pakistan</span>
+                <h4>Service</h4>
+                <span><?php echo $cid;?></span>
             </div> 
             <div class="detail-container">
                 <h4>Category</h4>
-                <span>Form L</span>
+                <span><?php echo $sid;?></span>
+            </div> 
+            <div class="detail-container">
+                <h4>Location</h4>
+                <span><?php echo $location; ?></span>
             </div> 
         </div>
         <div class="img-container">
-            <img src="./images/web-background-d.jpg">
-            <img src="./images/petroleum-2.jpg">
-            <img src="./images/background-6.png">
-            <img src="./images/construction-3-e1.jpg">
+                <?php foreach ($imgs as $i) {
+                    echo "<img src= 'admin/uploads/".$i."'>";
+                } ?>
         </div>
 
     </main>
+    <?php
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    ?>
 </section>
 
 <?php require_once "./pages/lets-talk.php";  ?>
@@ -100,4 +134,9 @@
 <?php require_once "./pages/footer.php"; ?>
 
 <script type="module" src="js/service.js"></script>
+<script>
+    let name = $('.desc-container h3').text();
+    $("#project-head .heading h2").text(name);
+</script>
+
 </html>

@@ -84,6 +84,43 @@ class dataSend
         }//table exists
 
     }
+    public function select($table,$row = "*", $join = null, $where = null, $order = null, $limit = null,$page = null,$group = null) {
+        if ($this->tableExist($table)) {
+            $sql = "SELECT $row FROM $table";
+                    if ($join != null) {
+                        $sql .= " $join";
+                    }
+                    if ($where != null) {
+                        $sql .= " WHERE $where";
+                    }
+                    if ($group != null) {
+                        $sql .= " GROUP BY $group";
+                    }
+            
+                    if ($order != null) {
+                        $sql .= " ORDER BY $order";
+                    }
+                    
+                    if ($limit != null) {
+                        $offset = ($page - 1) * $limit;
+                        $sql .= " LIMIT $offset,$limit";
+                    }
+                    $query = $this->conn->prepare($sql);
+
+                    if ($query->execute()) {
+                        $result = $query->get_result()->fetch_all(MYSQLI_ASSOC);
+                        return $result;
+                    }else{
+                        return false;
+                    }
+                    
+        }else{
+            return false;
+        }
+    }
+    public function prepare($query) {
+        return $this->conn->prepare($query);
+    }
 
     private function tableExist($table){
 
