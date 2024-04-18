@@ -47,7 +47,7 @@ form .sub-btn button,.footer-links,
 html::-webkit-scrollbar-thumb,
 .accordion-body::-webkit-scrollbar-thumb,
 .serv-btn,.inp_grp::before,
-form .sub-btn button,.footer-links:hover i,
+.footer-links:hover i,
 .social-links a,.projects .project-bx .project-layer{
     background: var(--primary-color);
 }
@@ -60,8 +60,8 @@ li::marker,
 .service-sec .head-container > h2,
 .license-sec .head-container > h2,
 .clients-container .clients-heading,.contact-heading,
-:is(textarea,.inp_grp input):focus :is(label,i),
-:is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label,
+:is(.inp_grp input):focus :is(label,i),
+:is(.inp_grp input.filled) ~ label,
 .quick-links a:hover ,
 .copyright-text a, #srv-head .srv-links li:hover,
 .accordion-button:not(.collapsed),strong,
@@ -80,14 +80,14 @@ li::marker,
 .srv-container .cards .drawing-detail{
     background-color: var(--glass-sec);
 }
-.inp_grp i ,.quick-links ul > li  a,
+.quick-links ul > li  a,
 .social-links a,.accordion-body details summary{
     color: var(--secondary-color);
 }
 :is(.abt-service,.clients-container,.visits),
-.contact_section .contact-container .form_container,
-textarea,textarea:focus + label,.inp_grp :is(input,i),
-:is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label,
+/* .contact_section .contact-container .form_container, */
+/* textarea,textarea:focus + label,.inp_grp :is(input,i), */
+/* :is(.inp_grp input.filled,.msg_grp textarea.filled) ~ label, */
 .projects,.project{
     background: var(--dark-black-2);
 }

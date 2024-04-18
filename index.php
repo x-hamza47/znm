@@ -5,7 +5,7 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <!-- Title -->
-      <title>ZNM -Enterprises</title>
+      <title>ZNM-Enterprises</title>
       <!-- Favicons -->
       <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
       <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -27,14 +27,14 @@
         <!--  NAVBAR  -->
         <nav class="nav">
 
-            <a href="" id="logo">
+            <a href="index.php" id="logo">
                 <img src="images/logo-2.png" alt="logo">
             </a>
             
            
               <ul class="links">
                 <li><a href="index.php#home" class="active">Home</a></li>
-                <li><a href="index.php#about-us">About Us</a></li>
+                <li><a href="index.php#about-us">About</a></li>
                 <li><a href="index.php#service">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="projects.php">Projects</a></li>
@@ -66,7 +66,7 @@
               <div class="img" style="left: 0;">
                 <div class="content">
                   <h2 class="current-img">Explosive License Service</h2>
-                  <a href="service.php" class="current-img"><button>See more!</button></a>
+                  <a href="license.php" class="current-img"><button>See more!</button></a>
                 </div>
               </div>
 
@@ -112,7 +112,6 @@
 
 <section class="about-us" id="about-us">
 
-  <!-- <h2 class="abt-head">About Us</h2> -->
     <div class="container">
         
       <div class="content">
@@ -161,40 +160,7 @@
         </div>
 
         </div>
-
         </div>
-<!-- Company CEO Card -->
-    <!-- <div class="author">
-     <h2 class="auth-heading">Meet Our <span></span></h2>
-    
-        <div class="container">
-            <div class="card">
-                <div class="card-content">
-                    <div class="image">
-                        <img src="./images/profile2.jpeg" alt="">
-                    </div>
-  
-
-                <div class="name-profession">
-                    <span class="name">Syed M. Noman</span>
-                    <span class="profession">Managing Director</span>
-                </div>
-
-                <div class="media-icons">            
-                    <i class="fa-brands fa-facebook"></i>
-                    <i class="fa-brands fa-instagram"></i>
-                    <i class="fa-brands fa-whatsapp"></i>
-                </div>
-
-                <div class="buttons">
-                    <button class="about call" ><i class="fa fa-phone"></i> Call</button>
-                    <button class="about mail"><i class="fa fa-paper-plane" aria-hidden="true"></i> Mail</button>
-                </div>
-
-                </div>
-            </div>
-        </div>
-    </div> -->
   </section>
 
   <section class="service-sec" id="service">
@@ -287,10 +253,6 @@
                     <p class="des">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
                     </p>
-                    <!-- <div class="btns">
-                        <button>SEE MORE</button>
-                        <button>LIKE</button>
-                    </div> -->
                 </div>
             </div>
             <!-- item 2 -->
@@ -303,10 +265,6 @@
                 <p class="des">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
                 </p>
-                <!-- <div class="btns">
-                    <button>SEE MORE</button>
-                    <button>LIKE</button>
-                </div> -->
             </div>
           </div>
             <!-- item 3 -->
@@ -319,10 +277,6 @@
                 <p class="des">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
                 </p>
-                <!-- <div class="btns">
-                    <button>SEE MORE</button>
-                    <button>LIKE</button>
-                </div> -->
             </div>
             </div>
           <!-- item 4 -->
@@ -335,10 +289,6 @@
                 <p class="des">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
                 </p>
-                <!-- <div class="btns">
-                    <button>SEE MORE</button>
-                    <button>LIKE</button>
-                </div> -->
             </div>
           </div>
           <!-- item 5 -->
@@ -351,10 +301,6 @@
                 <p class="des">
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quibusdam dolore, perspiciatis totam vel quasi dolorum molestiae delectus, molestias exercitationem tempore doloribus quia mollitia! Voluptas ipsa itaque sapiente eligendi! Deserunt.
                 </p>
-                <!-- <div class="btns">
-                    <button>SEE MORE</button>
-                    <button>LIKE</button>
-                </div> -->
             </div>
             </div>
         </div>
@@ -434,26 +380,6 @@
 
  <?php require_once './pages/clients.php'; ?>
 
-<!-- Project Section -->
-
-<!-- <section class="project_section" id="projects">
-
-      <div class="head-container">
-        <h2>Projects</h2>
-      </div>
-      <div class="main-container">
-      <div class="swiper mySwiper project_container">
-        <div class="swiper-wrapper project-content" id="pro-container">            
-        </div>
-    </div>
- 
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
- </div>
-</section> -->
-
-
 <!-- Contact Section -->
 
 <section class="contact_section" id="contact">
@@ -471,7 +397,7 @@
       <form id="contact_form">
         <div class="inp_grp">
           <input type="text" id="name" name="name" autocomplete="off">
-          <label for="name">Name</label>
+          <label for="name">*Name</label>
           <i class='bx bxs-user'></i>
         </div>
         <div class="inp_grp">
@@ -481,12 +407,12 @@
         </div>
         <div class="inp_grp">
           <input type="email" id="email" name="email" autocomplete="off">
-          <label for="email">Email</label>
+          <label for="email">*Email</label>
           <i class='bx bxs-envelope' ></i>
         </div>
         <div class="msg_grp">
           <textarea name="msg" id="msg" autocomplete="off"></textarea>
-          <label>Message</label>
+          <label>*Message</label>
         </div>
 
         <div class="sub-btn">
@@ -497,23 +423,23 @@
         </div>
       </form>
       <!-- form end -->
-<!-- toast -->
-      <div class="toast">
-        <div class="content">
-            <i class="fa-solid fa-check check"></i>
-
-        <div class="message">
-            <span class="text text-1"><!-- Dynamic text --></span>
-            <span class="text text-2"><!-- Dynamic text --></span>
-        </div>
-        <i class="fa-solid fa-xmark close"></i>
-        
-        <div class="progress"></div>
-        
-        </div>
     </div>
-    <!-- toast end -->
-    </div>
+    <!-- toast -->
+          <div class="toast">
+            <div class="content">
+                <i class="fa-solid fa-check check"></i>
+    
+            <div class="message">
+                <span class="text text-1"><!-- Dynamic text --></span>
+                <span class="text text-2"><!-- Dynamic text --></span>
+            </div>
+            <i class="fa-solid fa-xmark close"></i>
+            
+            <div class="progress"></div>
+            
+            </div>
+        </div>
+        <!-- toast end -->
 
     <!-- google map -->
     <div class="g-map" id='map'>

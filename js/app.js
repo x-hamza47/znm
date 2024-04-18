@@ -72,7 +72,6 @@ window.onscroll = () =>  {
   });
   
 
-
 // Media Query
 var screenWidth = window.innerWidth;
 var slides_per_view = 3;

@@ -110,9 +110,9 @@
             <img src="./logo/shiraz.png">
           </div>
           <!-- Slide 8 -->
-          <div class="client-slide">
+          <!-- <div class="client-slide">
             <img src="./logo/pso.png">
-          </div>
+          </div> -->
   
         </div>
         <div class="slider_track">
@@ -145,9 +145,9 @@
             <img src="./logo/shiraz.png">
           </div>
           <!-- Slide 8 -->
-          <div class="client-slide">
+          <!-- <div class="client-slide">
             <img src="./logo/pso.png">
-          </div>
+          </div> -->
   
         </div>
       </div>

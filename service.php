@@ -38,8 +38,8 @@
            
                 <ul class="links">
                 <li><a href="index.php#home">Home</a></li>
-                <li><a href="index.php#about-us">About Us</a></li>
-                <li><a href="index.php#service"  class="active">Services</a></li>
+                <li><a href="index.php#about-us"></a></li>
+                <li><a href="index.php#service" class="active">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="projects.php">Projects</a></li>
                 <li><a href="index.php#clients">Clients</a></li>

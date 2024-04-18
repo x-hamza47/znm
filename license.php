@@ -32,15 +32,14 @@
         <!--  NAVBAR  -->
         <nav class="nav">
 
-            <a href="" id="logo">
+            <a href="index.php" id="logo">
                 <img src="images/logo-2.png" alt="logo">
-                <!-- <span> <h3>ZNM Enterprises</h3></span> -->
             </a>
             
            
             <ul class="links">
                 <li><a href="index.php#home">Home</a></li>
-                <li><a href="index.php#about-us">About Us</a></li>
+                <li><a href="index.php#about-us">About</a></li>
                 <li><a href="index.php#service" class="active">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="projects.php">Projects</a></li>
@@ -89,21 +88,6 @@
                   <a href="#dpl"><button>See more!</button></a>
                 </div>
               </div>
-
-
-              <!-- <div class="img">
-                <div class="content">
-                    <h2>Dummy Text</h2>
-                  <a href="service.php"><button>See more!</button></a>
-                </div>
-              </div> -->
-              <!-- <div class="img">
-                <div class="content">
-                    <h2>Dummy Textt</h2>
-                  <a href="service.php"><button>See more!</button></a>
-                </div>
-              </div> -->
-
             </div>
 
             <span class="prev"><i class='bx bx-chevron-left'></i></span>

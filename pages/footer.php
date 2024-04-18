@@ -102,12 +102,7 @@
         <!-- search bar -->
 
         <div class="footer-logo-bx">
-          <img src="./images/logo-2.png" alt="znm logo">
-          <!-- <div class="search-bx">
-            <i class='bx bx-search'></i>
-            <input type="search" placeholder="Search...">
-          </div> -->
-
+          <a href="index.php"><img src="./images/logo-2.png" alt="znm logo"></a>
         </div>
 
       </div>

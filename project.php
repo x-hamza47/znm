@@ -30,13 +30,13 @@
     <header class="header">
         <!--  NAVBAR  -->
         <nav class="nav">
-            <a href="" id="logo">
+            <a href="index.php" id="logo">
                 <img src="images/logo-2.png" alt="logo">
             </a>
             <!-- Nav Links -->
               <ul class="links">
                 <li><a href="index.php#home">Home</a></li>
-                <li><a href="index.php#about-us">About Us</a></li>
+                <li><a href="index.php#about-us">About</a></li>
                 <li><a href="index.php#service">Services</a></li>
                 <li><a href="index.php#service">Design Gallery</a></li>
                 <li><a href="index.php#projects" class="active">Projects</a></li>

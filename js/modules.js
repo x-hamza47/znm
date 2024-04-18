@@ -8,7 +8,7 @@ export function toastError() {
 }
 
 export function toastSuccess() {
-    err_ico.removeClass("fa-exclamation").addClass("fa-check").css("background-color","green");
+    err_ico.removeClass("fa-exclamation").addClass("fa-check").css("background-color","#f07b26");
     progress.removeClass("error");
     toast.removeClass("error");
 }
