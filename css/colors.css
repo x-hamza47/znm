@@ -29,7 +29,7 @@ form .sub-btn button,.footer-links,
 #lt-sec .lt-btn,#lt-sec .lt-btn a,
 :is(.interior-head,.projects-head,.project-head) .heading :is(h1,h2),
 .projects .project-bx .project-layer,
-.service-head :is(h1,h2){
+.service-head :is(h1,h2),.accordion .accordion-item,.accordion-body details summary{
     color: var(--accent-color);
 }
 
@@ -63,11 +63,11 @@ li::marker,
 :is(.inp_grp input):focus :is(label,i),
 :is(.inp_grp input.filled) ~ label,
 .quick-links a:hover ,
-.copyright-text a, #srv-head .srv-links li:hover,
+.copyright-text a,#srv-head .srv-links li a:hover,
 .accordion-button:not(.collapsed),strong,
 .sum-list > li::before,
 .detail-container h4{ 
-    color: var(--primary-color);
+    color: var(--primary-color) !important;
 }
 
 .social-links a:is(:hover,:active) {
@@ -81,7 +81,7 @@ li::marker,
     background-color: var(--glass-sec);
 }
 .quick-links ul > li  a,
-.social-links a,.accordion-body details summary{
+.social-links a{
     color: var(--secondary-color);
 }
 :is(.abt-service,.clients-container,.visits),

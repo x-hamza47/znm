@@ -100,7 +100,7 @@ $(document).ready(function() {
     var details = $('details');
     details.on('click', function() {
         $(this).find('summary').css('color','#f07b26')
-        details.not($(this)).removeAttr('open').find('summary').css('color','#535a60');
+        details.not($(this)).removeAttr('open').find('summary').css('color','#fff');
     });
 });
 

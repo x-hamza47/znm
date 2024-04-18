@@ -177,7 +177,7 @@
                 Topography is the topic (theme, framework, and plan) that holds architecture and landscape...
                 </p>
               </div>
-              <button class="serv-btn" ><a href="service.php#topography">Read More</a></button>
+              <button class="serv-btn" ><a href="service.php">Read More</a></button>
             </div>
     <!-- service bx-2 -->
           <div class="service-bx">
@@ -190,7 +190,7 @@
                 <li>Developed Design</li>
               </ul>
             </div>
-            <button class="serv-btn" ><a href="service.php#architect-service">Read More</a></button>
+            <button class="serv-btn" ><a href="service.php">Read More</a></button>
           </div>
     <!-- service bx-3 -->
         <div class="service-bx">
@@ -209,7 +209,7 @@
             <div class="serv-detail">
           <p> Our team consists of skilled professionals and tradespeople. We aim to deliver top-quality...</p> 
             </div>
-            <button class="serv-btn" ><a href="service.php#construction">Read More</a></button>
+            <button class="serv-btn" ><a href="service.php">Read More</a></button>
           </div>
 
     <!-- service bx-6 -->
@@ -221,7 +221,7 @@
         Trust our team for top-quality web development services that bring your vision to life...
         </p>
       </div>
-      <button class="serv-btn" ><a href="service.php#web-dev">Read More</a></button>
+      <button class="serv-btn" ><a href="service.php">Read More</a></button>
     </div>
     <!-- service bx-7 -->
     <div class="service-bx">
@@ -231,7 +231,7 @@
         Trust our team for top-quality web development services that bring your vision to life...
         </p>
       </div>
-      <button class="serv-btn" ><a href="service.php#web-dev">Read More</a></button>
+      <button class="serv-btn" ><a href="service.php">Read More</a></button>
     </div>
   </main>
   </section>

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -230,7 +229,7 @@
 }
 
 .nav a:hover,
-.nav a.active{ color: var(--primary-color); }
+.nav a.active{ color: var(--primary-color) !important; }
 
 
 /* Service CSS */

@@ -20,9 +20,9 @@
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
       <!-- Custom CSS -->
       <link rel="stylesheet" href="css/style.css">
-      <link rel="stylesheet" href="css/colors.css">
       <link rel="stylesheet" href="css/lets-talk.css">
       <link rel="stylesheet" href="css/service.css">
+      <link rel="stylesheet" href="css/colors.css">
 </head>
 <body>
 
@@ -32,13 +32,12 @@
     
                 <a href="index.php" id="logo">
                     <img src="images/logo-2.png" alt="logo">
-                    <!-- <span> <h3 id="logo-head">ZNM Enterprises</h3></span> -->
                 </a>
                 
            
                 <ul class="links">
                 <li><a href="index.php#home">Home</a></li>
-                <li><a href="index.php#about-us"></a></li>
+                <li><a href="index.php#about-us">About</a></li>
                 <li><a href="index.php#service" class="active">Services</a></li>
                 <li><a href="interior.php">Interior Gallery</a></li>
                 <li><a href="projects.php">Projects</a></li>
@@ -67,40 +66,40 @@
         </div>
       </section>
     <main class="container-fluid main-ser-sec">
-      <!-- <section id="srv-head" class="container-fluid  d-flex justify-content-around pt-md-1 pb-md-1 pt-3 pb-3">
-        <div class=" d-flex container-fluid justify-content-around ">
-        <div id="srv-link-1" class="p-3">
-          <ul class="srv-links pt-4">
+      <section id="srv-head" class="container-fluid d-flex justify-content-around pt-md-1 pb-md-1 pt-3 pb-3">
+        <div class=" d-flex container-fluid justify-content-around flex-column flex-lg-row mt-4">
+        <div id="srv-link-1" class="p-3 p-md-0 pt-sm-0">
+          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
             <li><a href="#topography">Topgography</a></li>
             <li><a href="#design-consultant">Design Consultant</a></li>
           </ul>
         </div>
-        <div id="srv-link-2" class="p-3">
-          <ul class="srv-links pt-4">
+        <div id="srv-link-2" class="p-3 p-md-0 pt-sm-0">
+          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
             <li><a href="#architect-service">Architectural Services</a></li>
-            <li><a href="#interior-design">Interior Designing</a></li>
+            <li><a href="#desc-sec1">Interior Designing</a></li>
           </ul>
         </div>
-        <div id="srv-link-3" class="p-3">
-          <ul class="srv-links pt-4">
+        <div id="srv-link-3" class="p-3 p-md-0 pt-sm-0">
+          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
             <li><a href="#construction">Construction</a></li>
             <li><a href="#web-dev">Web Development</a></li>
           </ul>
         </div>
-        <div id="srv-link-4" class="p-3">
-          <ul class="srv-links pt-4">
+        <div id="srv-link-4" class="p-3 p-md-0 pt-sm-0">
+          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
             <li><a href="#graphic-design">Graphic Designing</a></li>
             <li><a href="#event-man">Event Management</a></li>
           </ul>
         </div>
         </div>
-      </section> -->
+      </section>
 
       <div class="container-fluid p-5 pt-4 pb-4 mt-4">
-        <h2 class="fw-normal border-bottom pb-4">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
+        <h2 class="fw-normal border-bottom pb-4" style="color: var(--accent-color);">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
       </div>
     <!-- section 1 -->
-      <section class="desc-section container-fluid d-flex flex-sm-column flex-lg-row justify-content-between ">
+      <section class="desc-section container-fluid d-flex flex-sm-column flex-lg-row justify-content-between " id='desc-sec1'>
         <!-- image -->
         <div id="carouselExampleFade" class="carousel slide carousel-fade w-100" data-bs-ride="carousel">
           <div class="carousel-inner">
@@ -117,7 +116,7 @@
         </div>
         <!-- image end -->
         <!-- accordion -->
-        <div id="accordion-section" class=" w-100 mt-5 p-4">
+        <div id="accordion-section" class="w-100 mt-5 p-4">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item" >
               <h2 class="accordion-header" id="topography">
@@ -253,26 +252,11 @@
         <!-- image end -->
         <!-- accordion -->
         <div id="accordion-section2" class="w-100 mt-3 p-4">
-          <div class="container-xl container-fluid mb-4">
-            <h2 class="fw-normal" style="font-size: 28px;">Expert services for development and construction.</h2>
+          <div class= "container-fluid mb-4">
+            <h2 class="fw-normal" style="font-size: 28px; color:var(--accent-color);">Expert services for development and construction.</h2>
           </div>
 
           <div class="accordion accordion-flush" id="accordionFlushExample2">
-            <!-- <div class="accordion-item " id="interior-design">
-              <h2 class="accordion-header">
-                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
-                  Interior Designing
-                </div>
-              </h2>
-              <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body">
-                  <p>At <strong>ZNM</strong>, each project, with its diversity, challenges, and opportunities, guides us along a new path that stimulates our curiosity and creative thinking. Therefore, each project is approached as a new and original territory without preconceived notions or ideas. The <strong>ZNM</strong> team brings together a special blend of talent and discipline through technical expertise and instinct, resulting in successful project outcomes.</p>
-
-                <p>We at <strong>ZNM</strong> adhere to a user-centric philosophy, centered on listening to our clients and providing innovative solutions, all while staying on schedule and within budget. We encourage continuous client participation throughout the project lifecycle, fostering productive interactions and building strong relationships.</p>
-                <p>Our approach to design is tailored to fit the owner's program, scope, timeline, and budget. Good design is truly innovative, eminently sensible, and a source of inspiration for all involved.</p>
-                </div>
-              </div>
-            </div> -->
             <div class="accordion-item" id="construction">
               <h2 class="accordion-header" >
                 <div class="accordion-button collapsed"  data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
@@ -287,31 +271,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="accordion-item" id="drawings">
-              <h2 class="accordion-header">
-                <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
-                  Drawings
-                </div>
-              </h2>
-              <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample2">
-                <div class="accordion-body" style="height: 400px;overflow-y: auto;">
-                  <details>
-                    <summary class="p-1 ">Floor Plan</summary>
-                    <p class="mt-2">
-                      A floor plan is a type of drawing that depicts the layout of a home or property from an overhead perspective. Typically, floor plans illustrate the positioning of walls, windows, doors, and stairs, along with fixed installations such as bathroom fixtures, kitchen cabinetry, and appliances. These drawings are usually done to scale and indicate room types, sizes, and wall lengths. Additionally, they may show furniture arrangements and outdoor areas.
-                    </p>
-                  </details>
-
-                  <details>
-                    <summary class="p-1">3D Floor Plan</summary>
-                    <p class="mt-2">
-                      A <strong>3D floor plan</strong>  is a type of diagram that shows the layout of a home or property in 3D. 3D means that the floor plan shows both perspective and height. Unlike a 2D Floor Plan, a <strong>3D Floor Plan</strong>  has more  details  and define  material  and  makes  it  easier  to understand the space.
-                    </p>
-                  </details>
-
-                </div>
-              </div>
-            </div> -->
           </div>
         </div>
         <!-- accordion end -->
@@ -339,7 +298,7 @@
           <!-- accordion -->
           <div id="accordion-section3" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
-              <h2 class="fw-normal " style="font-size: 28px;">Expert Services for Web Development and Graphic Designing.</h2>
+              <h2 class="fw-normal " style="font-size: 28px; color:var(--accent-color);">Expert Services for Web Development and Graphic Designing.</h2>
             </div>
   
             <div class="accordion accordion-flush" id="accordionFlushExample3">
@@ -408,11 +367,11 @@
           <!-- accordion -->
           <div id="accordion-section3" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
-              <h2 class="fw-normal " style="font-size: 28px;">Expert Services for Event Management.</h2>
+              <h2 class="fw-normal " style="font-size: 28px; color:var(--accent-color);">Expert Services for Event Management.</h2>
             </div>
   
             <div class="accordion accordion-flush" id="accordionFlushExample4">
-              <div class="accordion-item" id="web-dev">
+              <div class="accordion-item" id="event-man">
                 <h2 class="accordion-header">
                   <div class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseFour">
                     Event Management
@@ -431,19 +390,7 @@
         </section>
 
         </main>
-    <!-- <section class="container-fluid pt-2" id="lt-sec">
-      <div class="lt-bx d-flex align-items-center justify-content-center flex-column ">
-        <div class="lt-head w-75 text-center ">
-          <h1>Have a project in mind?</h1>
-        </div>
-        <div class="lt-sub-head mt-3">
-          <h2>Do not hesitate to say <span></span> </h2>
-        </div>
-        <div class="lt-btn mt-3 p-3">
-          <a href="index.php#contact" >Let's Talk </a><i class='bx bx-right-top-arrow-circle p-2 ml-3' ></i>
-        </div>
-      </div>
-    </section> -->
+
     <?php require_once "./pages/lets-talk.php";  ?>
 
     <?php  require_once "./pages/footer.php"; ?>
