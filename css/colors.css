@@ -26,7 +26,7 @@ html::-webkit-scrollbar-track,.accordion-body::-webkit-scrollbar-track{
 form .sub-btn button,.footer-links,
 :is(.quick-links,.social-links) h5,.copyright-text,
 #lt-sec .lt-head > h1,#lt-sec .lt-sub-head > h2,
-#lt-sec .lt-btn,#lt-sec .lt-btn a,
+#lt-sec .lt-btn,#lt-sec .lt-btn span,
 :is(.interior-head,.projects-head,.project-head) .heading :is(h1,h2),
 .projects .project-bx .project-layer,
 .service-head :is(h1,h2),.accordion .accordion-item,.accordion-body details summary{

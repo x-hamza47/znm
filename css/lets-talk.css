@@ -10,7 +10,7 @@
         height: 100%;
 
     .lt-head > h1{
-        font-size: clamp(67px,4.8vw,288px);
+        font-size: clamp(50px,4.8vw,288px);
         /* color: var(--accent-color); */
     }
     .lt-sub-head > h2{
@@ -19,34 +19,33 @@
         /* color: var(--accent-color); */
     }
     .lt-btn{
-        width: clamp(190px,12vw,500px);
+        width: clamp(130px,12vw,500px);
+        padding: clamp(14px,1.12vw,110px);
         display:flex;
         align-items: center;
         justify-content: space-between;
         border: 2px solid var(--accent-color);
         border-radius: 20px;
         position: relative;
+        text-decoration: none;
         transition: all .3s ease;
         cursor: pointer;  
-        /* color: var(--accent-color); */
-
         &:hover{
-            /* background: var(--accent-color); */
-            /* color: #212121; */
 
-            a{
+            span{
                 color: #212121;
             }
         }
-        a{
+        span{
             font-size: clamp(16px,1.5vw,88px);
             font-weight: 600;
             text-decoration: none;
             /* color: var(--accent-color); */
         }
-        a + i{
+        span + i{
                 font-size: clamp(18px,2.5vw,177px);
                 position: absolute;
+                padding: clamp(8px,.55vw,20px);
                 right: 0%;
             }
     }

@@ -67,27 +67,27 @@
       </section>
     <main class="container-fluid main-ser-sec">
       <section id="srv-head" class="container-fluid d-flex justify-content-around pt-md-1 pb-md-1 pt-3 pb-3">
-        <div class=" d-flex container-fluid justify-content-around flex-column flex-lg-row mt-4">
-        <div id="srv-link-1" class="p-3 p-md-0 pt-sm-0">
-          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
+        <div class="d-flex container-fluid justify-content-around flex-column flex-lg-row" style='margin-top:clamp(26px,2vw,120px);'>
+        <div id="srv-link-1">
+          <ul class="srv-links">
             <li><a href="#topography">Topgography</a></li>
             <li><a href="#design-consultant">Design Consultant</a></li>
           </ul>
         </div>
-        <div id="srv-link-2" class="p-3 p-md-0 pt-sm-0">
-          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
+        <div id="srv-link-2">
+          <ul class="srv-links">
             <li><a href="#architect-service">Architectural Services</a></li>
             <li><a href="#desc-sec1">Interior Designing</a></li>
           </ul>
         </div>
-        <div id="srv-link-3" class="p-3 p-md-0 pt-sm-0">
-          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
+        <div id="srv-link-3">
+          <ul class="srv-links">
             <li><a href="#construction">Construction</a></li>
             <li><a href="#web-dev">Web Development</a></li>
           </ul>
         </div>
-        <div id="srv-link-4" class="p-3 p-md-0 pt-sm-0">
-          <ul class="srv-links pt-4 pt-md-0 pt-sm-0">
+        <div id="srv-link-4">
+          <ul class="srv-links">
             <li><a href="#graphic-design">Graphic Designing</a></li>
             <li><a href="#event-man">Event Management</a></li>
           </ul>
@@ -96,7 +96,7 @@
       </section>
 
       <div class="container-fluid p-5 pt-4 pb-4 mt-4">
-        <h2 class="fw-normal border-bottom pb-4" style="color: var(--accent-color);">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
+        <h2 class="fw-normal border-bottom pb-4" style="font-size: clamp(30px,2.23vw,115px); color: var(--accent-color);">Collaborative, innovative, and sustainable architectural design solutions for a better world.</h2>
       </div>
     <!-- section 1 -->
       <section class="desc-section container-fluid d-flex flex-sm-column flex-lg-row justify-content-between " id='desc-sec1'>
@@ -116,7 +116,7 @@
         </div>
         <!-- image end -->
         <!-- accordion -->
-        <div id="accordion-section" class="w-100 mt-5 p-4">
+        <div id="accordion-section" class="w-100 mt-5">
           <div class="accordion accordion-flush" id="accordionFlushExample">
             <div class="accordion-item" >
               <h2 class="accordion-header" id="topography">
@@ -253,7 +253,7 @@
         <!-- accordion -->
         <div id="accordion-section2" class="w-100 mt-3 p-4">
           <div class= "container-fluid mb-4">
-            <h2 class="fw-normal" style="font-size: 28px; color:var(--accent-color);">Expert services for development and construction.</h2>
+            <h2 class="fw-normal" style="font-size: clamp(26px,2vw,120px); color:var(--accent-color);">Expert services for development and construction.</h2>
           </div>
 
           <div class="accordion accordion-flush" id="accordionFlushExample2">
@@ -298,7 +298,7 @@
           <!-- accordion -->
           <div id="accordion-section3" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
-              <h2 class="fw-normal " style="font-size: 28px; color:var(--accent-color);">Expert Services for Web Development and Graphic Designing.</h2>
+              <h2 class="fw-normal " style="font-size: clamp(26px,2vw,120px); color:var(--accent-color);">Expert Services for Web Development and Graphic Designing.</h2>
             </div>
   
             <div class="accordion accordion-flush" id="accordionFlushExample3">
@@ -365,9 +365,9 @@
         </div>
         <!-- image end -->
           <!-- accordion -->
-          <div id="accordion-section3" class="w-100 mt-3 p-4">
+          <div id="accordion-section4" class="w-100 mt-3 p-4">
             <div class="container-xl container-fluid mb-4">
-              <h2 class="fw-normal " style="font-size: 28px; color:var(--accent-color);">Expert Services for Event Management.</h2>
+              <h2 class="fw-normal " style="font-size: clamp(26px,2vw,120px); color:var(--accent-color);">Expert Services for Event Management.</h2>
             </div>
   
             <div class="accordion accordion-flush" id="accordionFlushExample4">

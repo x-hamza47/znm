@@ -53,9 +53,13 @@ body{
         transform: translateX(0);
     }
   }
+
+#accordion-section,#accordion-section2,#accordion-section3,#accordion-section4{
+padding:clamp(16px,1.6vw,110px) clamp(18px,2vw,120px);
+}
 .accordion .accordion-item,.accordion-item .accordion-body ul > li{
     background: var(--glass-primary) !important;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 }
 .accordion-item .accordion-header .accordion-button{
     background: var(--glass-sec) !important;
@@ -65,12 +69,16 @@ body{
 }
 .accordion-body{
     font-size: clamp(14px,1vw,57px);
+    padding:clamp(16px,1.6vw,110px) clamp(18px,2vw,120px);
 }
 .accordion-item .accordion-body ul > li{
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 7px;
     margin-block: 4px;
     color: var(--accent-color);
+}
+.main-ser-sec{
+    padding-inline: clamp(12px,1vw,80px);
 }
 #srv-head #srv-heading h1{
     font-size: 116px;
@@ -123,7 +131,6 @@ flex: 1 1 1;
     }
 }
 .accordion-item .accordion-button{
-    font-size: 20px;
     font-weight: 400;
     cursor: pointer;
 
@@ -134,7 +141,7 @@ flex: 1 1 1;
     }
 }
 
-section:has(#accordion-section,#accordion-section2,#accordion-section3){
+section:has(#accordion-section,#accordion-section2,#accordion-section3,#accordion-section4){
     scroll-snap-align: center;
 }
 
@@ -147,7 +154,9 @@ section:has(#accordion-section,#accordion-section2,#accordion-section3){
 .accordion-button::after{
     background-image: url("../images/chevron-down-white.png") !important;
     background-size: cover;
-    width: 25px;height: 25px;
+    width: clamp(24px,1.74vw,100px);
+    /* height: 25px; */
+    height: clamp(24px,1.74vw,100px);
 }
 .accordion-button:not(.collapsed)::after{
     background-image: url("../images/chevron-down-regular-24.png") !important;

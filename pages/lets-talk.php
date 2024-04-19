@@ -6,8 +6,10 @@
         <div class="lt-sub-head mt-3">
           <h2>Do not hesitate to say <span></span> </h2>
         </div>
-        <div class="lt-btn mt-3 p-3">
-          <a href="index.php#contact" >Let's Talk </a><i class='bx bx-right-top-arrow-circle p-2 ml-3' ></i>
-        </div>
+        <a href="index.php#contact"  class="lt-btn mt-3 ">
+        <span>
+          Let's Talk</span> <i class='bx bx-right-top-arrow-circle ml-3' ></i>
+
+      </a>
       </div>
     </section>
